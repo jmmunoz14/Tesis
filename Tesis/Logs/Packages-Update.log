@@ -61,6 +61,10 @@ The following packages were updated:
 Packages were changed.
 Update Mode: updateDependencies
 
+The following packages were updated:
+  com.unity.collab-proxy from version 1.2.15 to 1.2.16
+  com.unity.purchasing from version 2.0.3 to 2.0.6
+  com.unity.textmeshpro from version 2.0.0 to 2.0.1
 The following packages were added:
   com.unity.2d.tilemap@1.0.0
   com.unity.ext.nunit@1.0.0
