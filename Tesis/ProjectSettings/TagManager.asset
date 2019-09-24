@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - TextGame
   - PlaneToRepair
+  - Tutorial
   layers:
   - Default
   - TransparentFX
