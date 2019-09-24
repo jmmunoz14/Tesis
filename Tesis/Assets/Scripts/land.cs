@@ -13,14 +13,12 @@ public class land : MonoBehaviour
         TextMeshPro t = text.AddComponent<TextMeshPro>();
         System.Random rnd = new System.Random();
         int number = rnd.Next(1, 15);
+        t.name = gameObject.name + "text";
         t.text = number + " PH";
         t.fontSize = 10;
 
         t.transform.localEulerAngles += new Vector3(180, 90, 180);
         t.transform.localPosition += new Vector3( gameObject.transform.position.x , gameObject.transform.position.y - 1f, gameObject.transform.position.z + 9f);
-        
-
-
     }
 
     // Update is called once per frame
