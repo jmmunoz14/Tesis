@@ -36,7 +36,6 @@ public class land : MonoBehaviour
         landsTexts = GameObject.FindGameObjectsWithTag("TextGame");
 
         disabled = true;
-        
 
         
     }
