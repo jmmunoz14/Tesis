@@ -7,12 +7,12 @@ using System;
 public class land : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int gamePhase = 1;
+    private int gamePhase = 2;
     private static bool disabled;
     private GameObject[] landsTexts;
     private GameObject[] lands;
 
-    private float timeToShow = 2f;
+    private float timeToShow = 4f;
     private float timeToDie = 5f;
     void Start()
     {
@@ -69,6 +69,7 @@ public class land : MonoBehaviour
                 int random = RandomNumber(1, 14);
                 Debug.Log("Show "+ landsTexts[random].name);
                 landsTexts[random].SetActive(true);
+                landsTexts[random].GetComponent<TextMeshPro>().text = "Nutrir!";
                 timeToShow = 2f;
             }
             timeToDie -= Time.deltaTime;
