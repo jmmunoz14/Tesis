@@ -5,6 +5,8 @@ using UnityEngine;
 public class LandController : MonoBehaviour
 {
 	public GameObject[] lands;
+	public Material[] materials;
+
     private void Start()
     {
        
@@ -19,7 +21,9 @@ public class LandController : MonoBehaviour
 	public void initializePhLands()
 	{
 		foreach(var land in lands){
-			land.AddComponent<PhLandController>();
+			PhLandController phlc = land.AddComponent<PhLandController>() as PhLandController;
+			phlc.materials = materials;
+
 		}
 	}
 }
