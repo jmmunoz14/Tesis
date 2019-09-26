@@ -10,7 +10,11 @@ public class LandController : MonoBehaviour
     public GameController gameController;
 	public GameObject[] lands;
 	public Material[] materials;
-    private bool phRunning = false; 
+    List<GameObject> landsToNutrient = new List<GameObject>();
+    public float nutrientsTimeToShow = 8f;
+
+    private bool phRunning = false;
+    private bool nutrientsRunning = false;
     public float phTimer;
     public float nutrientsTimer;
     public float farmTimer;
@@ -39,6 +43,28 @@ public class LandController : MonoBehaviour
             }
 
         }
+
+        if (nutrientsRunning)
+        {
+            nutrientsTimer -= Time.deltaTime;
+            izquierdo.text = phTimer + " S";
+            derecho.text = phTimer + " S";
+            if (nutrientsTimer <= 0.0f)
+            {
+                izquierdo.transform.gameObject.SetActive(false);
+                derecho.transform.gameObject.SetActive(false);
+                nutrientsRunning = false;
+                EndNutrientsPhase();
+            }
+            nutrientsTimeToShow -= Time.deltaTime;
+            if (nutrientsTimeToShow < 0)
+            {
+                int r = RandomNumber(1, 14);
+                landsToNutrient[r].GetComponent<NutrientLandController>().EnableText();
+                nutrientsTimeToShow = 4f;
+            }
+        }
+
     }
 
 	public void initializePhLands()
@@ -65,7 +91,6 @@ public class LandController : MonoBehaviour
 
     public void initializeNutrientsLands()
     {
-        List<GameObject> landsToNutrient = new List<GameObject>();
         foreach (var land in lands)
         {
             if (land.tag == "SafeLand") {
@@ -77,9 +102,10 @@ public class LandController : MonoBehaviour
         {
             NutrientLandController nlc = land.AddComponent<NutrientLandController>() as NutrientLandController;
         }
-
+        nutrientsRunning = true;
 
     }
+
 
 
     public void EndPhPhase()
@@ -94,5 +120,26 @@ public class LandController : MonoBehaviour
 
         }
         gameController.SetNextPhase();
+    }
+
+
+    public void EndNutrientsPhase()
+    {
+        foreach (var land in landsToNutrient)
+        {
+            Destroy(land.GetComponent<NutrientLandController>());
+            foreach (Transform child in land.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+        }
+        gameController.SetNextPhase();
+    }
+
+    int RandomNumber(int min, int max)
+    {
+        System.Random random = new System.Random();
+        return random.Next(min, max);
     }
 }

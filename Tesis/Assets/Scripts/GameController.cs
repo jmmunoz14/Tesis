@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -8,6 +9,9 @@ public class GameController : MonoBehaviour
 	public string[] phases;
 	public string currentPhase;
 	public LandController landController;
+    public GameObject player;
+    public GameObject pPosition;
+    public GameObject tutorialPosition;
 
     public void StartGame()
     {
@@ -18,10 +22,26 @@ public class GameController : MonoBehaviour
 	public void SetNextPhase()
 	{
         currentPhaseindex++;
-		currentPhase = phases[currentPhaseindex];
-		SetUpScene(currentPhase);
-		
-	}
+        if(currentPhaseindex == 2)
+        {
+            EndGame();
+        }
+        else
+        {
+            currentPhase = phases[currentPhaseindex];
+            SetUpScene(currentPhase);
+            player.transform.position = new Vector3(pPosition.transform.position.x, pPosition.transform.position.y, pPosition.transform.position.z);
+
+        }
+
+    }
+
+    public void EndGame()
+    {
+        player.transform.position = new Vector3(tutorialPosition.transform.position.x, tutorialPosition.transform.position.y, tutorialPosition.transform.position.z);
+       TextMeshProUGUI text = GameObject.Find("Canvas/Text(TMP)").GetComponent<TextMeshProUGUI>();
+        text.text = "F de FIN";
+    }
 
 	private void SetUpScene(string phase){
 		switch(phase)
