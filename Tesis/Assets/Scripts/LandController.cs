@@ -32,6 +32,8 @@ public class LandController : MonoBehaviour
             derecho.text = phTimer + " S";
             if (phTimer <= 0.0f)
             {
+                izquierdo.transform.gameObject.SetActive(false);
+                derecho.transform.gameObject.SetActive(false);
                 phRunning = false;
                 EndPhPhase();
             }
@@ -56,8 +58,10 @@ public class LandController : MonoBehaviour
             text.GetComponent<RectTransform>().sizeDelta = new Vector2(3, 5);
         }
         phRunning = true;
+        izquierdo.transform.gameObject.SetActive(true);
+        derecho.transform.gameObject.SetActive(true);
 
-	}
+    }
 
     public void initializeNutrientsLands()
     {
