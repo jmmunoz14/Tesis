@@ -22337,6 +22337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPointer: {fileID: 450910674}
   gameControl: {fileID: 1900068681}
+  pPosition: {fileID: 1423791629}
 --- !u!1 &800259685
 GameObject:
   m_ObjectHideFlags: 0
@@ -22758,7 +22759,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145122795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1478016209}
@@ -22766,7 +22767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1145122797
@@ -23065,7 +23066,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207279530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 569516658}
@@ -23073,7 +23074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1207279532
@@ -24226,13 +24227,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731882266}
-  m_LocalRotation: {x: 0.00053896854, y: 0.021228889, z: -0.010287648, w: 0.9997216}
-  m_LocalPosition: {x: 24.69, y: -1.23, z: -0.03}
+  m_LocalRotation: {x: -0, y: 0.02821434, z: -0, w: 0.9996019}
+  m_LocalPosition: {x: 24.686, y: -1.4, z: -0.030000687}
   m_LocalScale: {x: 0.7185423, y: 1, z: 0.65867}
   m_Children: []
   m_Father: {fileID: 824136682}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0.087000005, y: 2.4320002, z: -1.177}
+  m_LocalEulerAnglesHint: {x: 0, y: 3.2340002, z: 0}
 --- !u!64 &1731882268
 MeshCollider:
   m_ObjectHideFlags: 0
