@@ -13,6 +13,9 @@ public class SceneHandler : MonoBehaviour
     private TextMeshProUGUI text;
     private GameObject player;
     private int numberOfTutorial = 0;
+    public GameController gameControl;
+
+    public GameObject pPosition;
 
     void Awake()
     {
@@ -56,7 +59,9 @@ public class SceneHandler : MonoBehaviour
         }
         if (numberOfTutorial == 3)
         {
-            player.transform.position = new Vector3((float)23.141, 0, (float)-27.237);
+            player.transform.position = new Vector3(pPosition.transform.position.x, pPosition.transform.position.y, pPosition.transform.position.z);
+            gameControl.StartGame();
+
         }
 
         numberOfTutorial += 1;

@@ -9,6 +9,9 @@ TagManager:
   - TextGame
   - PlaneToRepair
   - Tutorial
+  - PhText
+  - DamagedLand
+  - SafeLand
   layers:
   - Default
   - TransparentFX

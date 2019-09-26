@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PhLandController : MonoBehaviour
 {
-	[Range(22f,32f)]
-	public float optimalLevel;  
 
-	private float currentPhLevel;
+	public float optimalMinimunLevel = 35;
+    public float optimalMaxLevel = 55;
+
+    private float currentPhLevel;
+    private TextMeshPro phText;
 
 	public Material[] materials;
 
@@ -15,16 +18,24 @@ public class PhLandController : MonoBehaviour
 		
     void Start()
     {
-		currentPhLevel = Random.Range(1f, 15f);
+		currentPhLevel = Random.Range(1, 15);
+        phText = GetComponentInChildren<TextMeshPro>();
+        phText.text = currentPhLevel + "Ph";
     }
 
-    
-    void FixedUpdate(){
-		if(currentPhLevel>optimalLevel)
-		{
-			Renderer rend = GetComponent<Renderer>();
-			rend.sharedMaterial = materials[0];
-		}
+
+    void FixedUpdate() {
+
+        if (currentPhLevel > optimalMaxLevel)
+        {
+            Renderer rend = GetComponent<Renderer>();
+            rend.sharedMaterial = materials[2];
+            gameObject.tag = "DamagedLand";
+        }
+        else if (currentPhLevel >= optimalMinimunLevel && currentPhLevel <= optimalMaxLevel)
+        {
+            gameObject.tag = "SafeLand";
+    }
     }
 
 	private void setPhState(bool state)
@@ -34,6 +45,8 @@ public class PhLandController : MonoBehaviour
 
 	public void increasePHLevel()
 	{
-		currentPhLevel += 1*Random.Range(0.5f,1.2f);
+		currentPhLevel += 1*Random.Range(1,3);
+        phText.text = currentPhLevel + "Ph";
+        
 	}
 }

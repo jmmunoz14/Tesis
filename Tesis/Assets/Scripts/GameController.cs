@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    private int currentPhaseindex = 0;
 	public string[] phases;
 	public string currentPhase;
 	public LandController landController;
 
-    private void Start()
+    public void StartGame()
     {
-		currentPhase = phases[0];
-		SetUpScene(currentPhase);
+        currentPhase = phases[currentPhaseindex];
+        SetUpScene(currentPhase);
     }
 			
-	public void SetNextPhase(string nextPhase)
+	public void SetNextPhase()
 	{
-		currentPhase = nextPhase;
+        currentPhaseindex++;
+		currentPhase = phases[currentPhaseindex];
 		SetUpScene(currentPhase);
 		
 	}
@@ -28,7 +30,8 @@ public class GameController : MonoBehaviour
 			landController.initializePhLands();
 		break;
 		case "Nutrients":
-			break;
+                landController.initializeNutrientsLands();
+                break;
 		case "Farm":
 			break;
 			default:

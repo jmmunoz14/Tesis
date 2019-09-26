@@ -22,11 +22,11 @@ public class FluidController : MonoBehaviour
         //Debug.Log("Euler: " + flash.gameObject.transform.eulerAngles.x);
         if (flash.gameObject.transform.eulerAngles.x <= 90)
         {
-            component.lifespan = 5f;
+            component.speed = 1f;
         }
         else
         {
-            component.lifespan = 0f;
+            component.speed = 0f;
         }
     }
 }
