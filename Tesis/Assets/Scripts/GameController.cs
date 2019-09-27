@@ -40,9 +40,12 @@ public class GameController : MonoBehaviour
     {
         player.transform.position = new Vector3(tutorialPosition.transform.position.x, tutorialPosition.transform.position.y, tutorialPosition.transform.position.z);
        TextMeshProUGUI text = GameObject.Find("Canvas/Text(TMP)").GetComponent<TextMeshProUGUI>();
-        text.text = "F de FIN";
+        GameObject[] totalLands = landController.lands;
+        List<GameObject> landsRepaired = landController.landsToNutrient;
+        double percentage = (landsRepaired.Count * 100) / totalLands.Length; 
+        text.text = "Lograste reparar el " + percentage + " de las tierras";
     }
-
+    
 	private void SetUpScene(string phase){
 		switch(phase)
 		{

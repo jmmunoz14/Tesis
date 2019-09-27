@@ -10,7 +10,7 @@ public class LandController : MonoBehaviour
     public GameController gameController;
 	public GameObject[] lands;
 	public Material[] materials;
-    List<GameObject> landsToNutrient = new List<GameObject>();
+    public List<GameObject> landsToNutrient = new List<GameObject>();
     public float nutrientsTimeToShow = 8f;
 
     private bool phRunning = false;
