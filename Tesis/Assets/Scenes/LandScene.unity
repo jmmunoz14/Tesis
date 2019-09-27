@@ -183,6 +183,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1a0c4d18584a3f14087077d1dafa042e, type: 2}
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
   - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
+  landsToNutrient: []
+  nutrientsTimeToShow: 8
   phTimer: 15
   nutrientsTimer: 0
   farmTimer: 0
@@ -24907,6 +24909,9 @@ MonoBehaviour:
   - Farm
   currentPhase: 
   landController: {fileID: 164873038}
+  player: {fileID: 745010209}
+  pPosition: {fileID: 1423791629}
+  tutorialPosition: {fileID: 1423791629}
 --- !u!1 &1945133715
 GameObject:
   m_ObjectHideFlags: 0
@@ -25395,6 +25400,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LandToRepair
       objectReference: {fileID: 0}
+    - target: {fileID: 6772623712135512624, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafeLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623712846546272, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafeLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014618942905932398, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafeLand
+      objectReference: {fileID: 0}
     - target: {fileID: 6772623712341840064, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25450,80 +25470,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6772623712650514871, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+    - target: {fileID: 6772623712528174851, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_TagString
-      value: PlaneToRepair
+      value: SafeLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623712859784010, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafeLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623713621562292, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafeLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623712547974339, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafeLand
       objectReference: {fileID: 0}
     - target: {fileID: 6772623712037074154, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_TagString
-      value: PlaneToRepair
+      value: SafeLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623711987079574, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafeLand
       objectReference: {fileID: 0}
     - target: {fileID: 6772623711837778882, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_TagString
-      value: PlaneToRepair
+      value: SafeLand
       objectReference: {fileID: 0}
     - target: {fileID: 6772623712835243744, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_TagString
-      value: PlaneToRepair
+      value: SafeLand
       objectReference: {fileID: 0}
     - target: {fileID: 6772623712835243744, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_Name
       value: Plane (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6772623712135719424, guid: f05b2e25c60d1e649bdb41ca541d2b23,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlaneToRepair
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623712547974339, guid: f05b2e25c60d1e649bdb41ca541d2b23,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlaneToRepair
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623712846546272, guid: f05b2e25c60d1e649bdb41ca541d2b23,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlaneToRepair
-      objectReference: {fileID: 0}
     - target: {fileID: 6772623712042815799, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_TagString
-      value: PlaneToRepair
+      value: SafeLand
       objectReference: {fileID: 0}
-    - target: {fileID: 6772623712528174851, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+    - target: {fileID: 6772623712135719424, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_TagString
-      value: PlaneToRepair
+      value: SafeLand
       objectReference: {fileID: 0}
-    - target: {fileID: 6772623711987079574, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+    - target: {fileID: 6772623712650514871, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_TagString
-      value: PlaneToRepair
+      value: SafeLand
       objectReference: {fileID: 0}
     - target: {fileID: 6772623712849283989, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_TagString
-      value: PlaneToRepair
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623712135512624, guid: f05b2e25c60d1e649bdb41ca541d2b23,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlaneToRepair
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623712859784010, guid: f05b2e25c60d1e649bdb41ca541d2b23,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlaneToRepair
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772623713621562292, guid: f05b2e25c60d1e649bdb41ca541d2b23,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlaneToRepair
+      value: SafeLand
       objectReference: {fileID: 0}
     - target: {fileID: 6772623711837778895, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
@@ -25689,11 +25699,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8014618942905932398, guid: f05b2e25c60d1e649bdb41ca541d2b23,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlaneToRepair
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8459754864029481040, guid: f05b2e25c60d1e649bdb41ca541d2b23, type: 3}
