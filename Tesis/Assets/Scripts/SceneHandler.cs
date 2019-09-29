@@ -16,6 +16,7 @@ public class SceneHandler : MonoBehaviour
     public GameController gameControl;
 
     public GameObject pPosition;
+    public GameObject gPosition;
 
     void Awake()
     {
@@ -51,6 +52,12 @@ public class SceneHandler : MonoBehaviour
             Debug.Log("Button was clicked");
         }
         if (numberOfTutorial == 3)
+        {
+            player.transform.position = new Vector3(gPosition.transform.position.x, gPosition.transform.position.y, gPosition.transform.position.z);
+       
+
+        }
+        if(numberOfTutorial == 4)
         {
             player.transform.position = new Vector3(pPosition.transform.position.x, pPosition.transform.position.y, pPosition.transform.position.z);
             gameControl.StartGame();
