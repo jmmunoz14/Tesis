@@ -32,11 +32,8 @@ public class SceneHandler : MonoBehaviour
 
         if (e.target.name == "Plane (1)")
         {
-            Debug.Log("entra1");
             if (numberOfTutorial == 0)
             {
-
-                Debug.Log("entra2");
                 text.text = "El proceso de reparar un suelo generalmente consta de 3 partes: \n" +
                             "- Recuperar la acidez del suelo. \n" +
                             "- Devolver los nutrientes del suelo. \n" +
@@ -44,15 +41,11 @@ public class SceneHandler : MonoBehaviour
             }
             if (numberOfTutorial == 1)
             {
-
-                Debug.Log("entra3");
                 text.text = "El dia de hoy tomará el papel de un campesino que debe recuperar y reparar su suelo, lo cual no es una tarea facil. \n" +
                             "El objetivo es entender el proceso que se lleva a cabo, la dificultad de este proceso y como en muchos casos el suelo es irreparable.";
             }
             if (numberOfTutorial == 2)
             {
-
-                Debug.Log("entra4");
                 text.text = "Usted deberá realizar cada una de las tres tareas y tendrá un tiempo límite. Al presionar el gatillo, comenzará el tiempo de la primera tarea";
             }
             Debug.Log("Button was clicked");

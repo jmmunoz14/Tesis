@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
         GameObject[] totalLands = landController.lands;
         List<GameObject> landsRepaired = landController.landsToNutrient;
         double percentage = (landsRepaired.Count * 100) / totalLands.Length; 
-        text.text = "Lograste reparar el " + percentage + " de las tierras";
+        text.text = "Lograste reparar el " + percentage + "% de las tierras";
     }
     
 	private void SetUpScene(string phase){

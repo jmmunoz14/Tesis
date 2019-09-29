@@ -11,7 +11,7 @@ public class LandController : MonoBehaviour
 	public GameObject[] lands;
 	public Material[] materials;
     public List<GameObject> landsToNutrient = new List<GameObject>();
-    public float nutrientsTimeToShow = 8f;
+    public float nutrientsTimeToShow;
 
     private bool phRunning = false;
     private bool nutrientsRunning = false;
@@ -46,9 +46,11 @@ public class LandController : MonoBehaviour
 
         if (nutrientsRunning)
         {
+            izquierdo.transform.gameObject.SetActive(true);
+            derecho.transform.gameObject.SetActive(true);
             nutrientsTimer -= Time.deltaTime;
-            izquierdo.text = phTimer + " S";
-            derecho.text = phTimer + " S";
+            izquierdo.text = nutrientsTimer + " S";
+            derecho.text = nutrientsTimer + " S";
             if (nutrientsTimer <= 0.0f)
             {
                 izquierdo.transform.gameObject.SetActive(false);
@@ -59,6 +61,7 @@ public class LandController : MonoBehaviour
             nutrientsTimeToShow -= Time.deltaTime;
             if (nutrientsTimeToShow < 0)
             {
+                Debug.Log("show");
                 int r = RandomNumber(1, 14);
                 landsToNutrient[r].GetComponent<NutrientLandController>().EnableText();
                 nutrientsTimeToShow = 4f;
@@ -100,6 +103,7 @@ public class LandController : MonoBehaviour
 
         foreach (var land in landsToNutrient)
         {
+            Debug.Log(land.name);
             NutrientLandController nlc = land.AddComponent<NutrientLandController>() as NutrientLandController;
         }
         nutrientsRunning = true;
