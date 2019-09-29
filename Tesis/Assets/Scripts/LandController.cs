@@ -96,7 +96,7 @@ public class LandController : MonoBehaviour
     {
         foreach (var land in lands)
         {
-            if (land.tag == "SafeLand") {
+            if (land.tag == "SafePH") {
                 landsToNutrient.Add(land);
             }
         }

@@ -12,6 +12,8 @@ TagManager:
   - PhText
   - DamagedLand
   - SafeLand
+  - SafePH
+  - SafeNutrients
   layers:
   - Default
   - TransparentFX

@@ -34,7 +34,7 @@ public class PhLandController : MonoBehaviour
         }
         else if (currentPhLevel >= optimalMinimunLevel && currentPhLevel <= optimalMaxLevel)
         {
-            gameObject.tag = "SafeLand";
+            gameObject.tag = "SafePH";
             Renderer rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[1];
         }
