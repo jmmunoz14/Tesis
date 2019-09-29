@@ -35,7 +35,9 @@ public class PhLandController : MonoBehaviour
         else if (currentPhLevel >= optimalMinimunLevel && currentPhLevel <= optimalMaxLevel)
         {
             gameObject.tag = "SafeLand";
-    }
+            Renderer rend = GetComponent<Renderer>();
+            rend.sharedMaterial = materials[1];
+        }
     }
 
 	private void setPhState(bool state)
@@ -45,7 +47,7 @@ public class PhLandController : MonoBehaviour
 
 	public void increasePHLevel()
 	{
-		currentPhLevel += 1*Random.Range(1,3);
+		currentPhLevel += 0.01f*Random.Range(1,25);
         phText.text = currentPhLevel + "Ph";
         
 	}

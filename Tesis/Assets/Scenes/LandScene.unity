@@ -235,7 +235,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881437}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &123116705
 GameObject:
@@ -371,7 +371,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
   landsToNutrient: []
   nutrientsTimeToShow: 5
-  phTimer: 15
+  phTimer: 45
   nutrientsTimer: 20
   farmTimer: 0
   izquierdo: {fileID: 1207279532}
@@ -21957,7 +21957,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881441}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &450910670 stripped
 GameObject:
@@ -23290,7 +23290,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881432}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!4 &824136682 stripped
 Transform:
@@ -23552,7 +23552,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881438}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &911701551
 GameObject:
@@ -23677,7 +23677,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881435}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &981484322 stripped
 GameObject:
@@ -23701,7 +23701,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881445}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &1022371403
 GameObject:
@@ -31782,7 +31782,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881440}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &1400284879
 GameObject:
@@ -31986,7 +31986,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881443}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &1423791629
 GameObject:
@@ -32366,7 +32366,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881433}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &1478016205
 GameObject:
@@ -32560,7 +32560,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881436}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &1524785856 stripped
 GameObject:
@@ -32804,7 +32804,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881434}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1001 &1569988832
 PrefabInstance:
@@ -33964,7 +33964,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881444}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &2020930971 stripped
 GameObject:
@@ -33984,11 +33984,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 11400000, guid: d368f2c47473d4bfb8dd9f08073cb403, type: 2}
+  material: {fileID: 11400000, guid: 7e318fd02475245f48f8f968e5ef09d5, type: 2}
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881442}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &2051427122
 GameObject:
@@ -34122,7 +34122,7 @@ MonoBehaviour:
   phase: 0
   thickness: 0
   sourceCollider: {fileID: 6772623712707881439}
-  useDistanceFields: 1
+  useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
 --- !u!1 &2105822096
 GameObject:
@@ -34585,7 +34585,7 @@ PrefabInstance:
     - target: {fileID: 2957352405585915014, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6772623712835243759, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
