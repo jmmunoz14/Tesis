@@ -23,13 +23,21 @@ public class FluidPhCollisionHandler : MonoBehaviour {
 
 	void Solver_OnCollision (object sender, Obi.ObiSolver.ObiCollisionEventArgs e)
 	{
-		Oni.Contact contact = e.contacts[0];
+		foreach(Oni.Contact contact in e.contacts)
+		{
+			if (contact.distance < 0.001f)
+			{
+				Component collider;
 
-		Component collider;
-		if (ObiCollider.idToCollider.TryGetValue(contact.other,out collider)){
-			phController = collider.GetComponent<PhLandController>();
-			phController.increasePHLevel();
+
+				if (ObiCollider.idToCollider.TryGetValue(contact.other, out collider)){
+
+					phController = collider.GetComponent<PhLandController>();
+					phController.increasePHLevel();
+				}
+			}
 		}
+	
 	}
 
 
