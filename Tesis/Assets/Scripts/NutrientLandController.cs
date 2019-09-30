@@ -6,9 +6,11 @@ using UnityEngine;
 public class NutrientLandController : MonoBehaviour
 {
     public int randomN;
+	public Material[] materials;
     private bool enable = false;
     private float timeToDie = 7f;
     GameObject myText;
+	private bool hasBeenSafe = false;
 
     public List<GameObject> lands;
     private List<GameObject> landsTexts;
@@ -42,12 +44,24 @@ public class NutrientLandController : MonoBehaviour
             myText.SetActive(false);
             timeToDie = 7f;
         }
+
+		if(hasBeenSafe)
+		{
+			Renderer rend = GetComponent<Renderer>();
+			rend.sharedMaterial = materials[3];
+			gameObject.tag = "SafeNutrients";
+		}
     }
 
     public void EnableText()
     {
         enable = true;
     }
+
+	public void safeLand()
+	{
+		hasBeenSafe = true;
+	}
 
     
 }
