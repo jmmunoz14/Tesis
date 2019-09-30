@@ -372,8 +372,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
   landsToNutrient: []
   nutrientsTimeToShow: 5
-  phTimer: 45
-  nutrientsTimer: 20
+  phTimer: 55
+  nutrientsTimer: 55
   farmTimer: 0
   izquierdo: {fileID: 1207279532}
   derecho: {fileID: 1145122797}

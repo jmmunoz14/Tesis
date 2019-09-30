@@ -60,6 +60,7 @@ public class NutrientLandController : MonoBehaviour
 
 	public void safeLand()
 	{
+        if(enable)
 		hasBeenSafe = true;
 	}
 

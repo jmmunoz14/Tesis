@@ -105,6 +105,7 @@ public class LandController : MonoBehaviour
         {
             Debug.Log(land.name);
             NutrientLandController nlc = land.AddComponent<NutrientLandController>() as NutrientLandController;
+            nlc.materials = materials;
         }
         nutrientsRunning = true;
 
