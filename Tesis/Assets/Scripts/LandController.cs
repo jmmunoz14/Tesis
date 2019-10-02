@@ -67,14 +67,9 @@ public class LandController : MonoBehaviour
             nutrientsTimeToShow -= Time.deltaTime;
             if (nutrientsTimeToShow < 0)
             {
-                Debug.Log("show");
-                Debug.Log(num.Count);
-                System.Random ran = new System.Random();
-                int r = ran.Next(0, num.Count-1);
-                landsToNutrient[r].GetComponent<NutrientLandController>().EnableText();
+				int r = Random.Range (0, num.Count);
+                landsToNutrient[num[r]].GetComponent<NutrientLandController>().EnableText();
                 num.Remove(r);
-                Debug.Log("numero"+ r);
-
                 nutrientsTimeToShow = 2f;
             }
         }
@@ -105,28 +100,22 @@ public class LandController : MonoBehaviour
 
     public void initializeNutrientsLands()
     {
+		int nutrientsCounter = 0;
         foreach (var land in lands)
         {
             if (land.tag == "SafePH") {
                 landsToNutrient.Add(land);
             }
         }
-        Debug.Log("Tamaño arreglo tierras: " + landsToNutrient.Count);
-
+   
         foreach (var land in landsToNutrient)
         {
-            Debug.Log(land.name);
             NutrientLandController nlc = land.AddComponent<NutrientLandController>() as NutrientLandController;
             nlc.materials = materials;
-        }
-        for (int i = 0; i< landsToNutrient.Count; i++)
-        {
-            Debug.Log(i);
-            Debug.Log("Tamaño " + num.Count);
-            num.Add(i);
+			num.Add(nutrientsCounter);
+			nutrientsCounter++;
         }
         nutrientsRunning = true;
-
     }
 
 
