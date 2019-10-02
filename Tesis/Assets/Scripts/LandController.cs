@@ -4,6 +4,7 @@ using UnityEngine;
 using Obi;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 public class LandController : MonoBehaviour
 {
@@ -21,9 +22,12 @@ public class LandController : MonoBehaviour
     public Text izquierdo;
     public Text derecho;
 
+    public List<int> num = new List<int>();
+
+
     private void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -44,6 +48,8 @@ public class LandController : MonoBehaviour
 
         }
 
+        
+
         if (nutrientsRunning)
         {
             izquierdo.transform.gameObject.SetActive(true);
@@ -62,9 +68,14 @@ public class LandController : MonoBehaviour
             if (nutrientsTimeToShow < 0)
             {
                 Debug.Log("show");
-                int r = RandomNumber(1, 14);
+                Debug.Log(num.Count);
+                System.Random ran = new System.Random();
+                int r = ran.Next(0, num.Count-1);
                 landsToNutrient[r].GetComponent<NutrientLandController>().EnableText();
-                nutrientsTimeToShow = 4f;
+                num.Remove(r);
+                Debug.Log("numero"+ r);
+
+                nutrientsTimeToShow = 2f;
             }
         }
 
@@ -100,12 +111,19 @@ public class LandController : MonoBehaviour
                 landsToNutrient.Add(land);
             }
         }
+        Debug.Log("Tamaño arreglo tierras: " + landsToNutrient.Count);
 
         foreach (var land in landsToNutrient)
         {
             Debug.Log(land.name);
             NutrientLandController nlc = land.AddComponent<NutrientLandController>() as NutrientLandController;
             nlc.materials = materials;
+        }
+        for (int i = 0; i< landsToNutrient.Count; i++)
+        {
+            Debug.Log(i);
+            Debug.Log("Tamaño " + num.Count);
+            num.Add(i);
         }
         nutrientsRunning = true;
 
