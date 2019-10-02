@@ -47,9 +47,7 @@ public class LandController : MonoBehaviour
             }
 
         }
-
         
-
         if (nutrientsRunning)
         {
             izquierdo.transform.gameObject.SetActive(true);
@@ -69,7 +67,7 @@ public class LandController : MonoBehaviour
             {
 				int r = Random.Range (0, num.Count);
                 landsToNutrient[num[r]].GetComponent<NutrientLandController>().EnableText();
-                num.Remove(r);
+				num.RemoveAt(r);
                 nutrientsTimeToShow = 2f;
             }
         }
