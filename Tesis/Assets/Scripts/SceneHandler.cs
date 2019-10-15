@@ -47,7 +47,7 @@ public class SceneHandler : MonoBehaviour
             }
             if (numberOfTutorial == 2)
             {
-                text.text = "Usted deberá realizar cada una de las tres tareas y tendrá un tiempo límite. Al presionar el gatillo, comenzará el tiempo de la primera tarea";
+                text.text = "Usted deberá realizar cada una de las tres tareas y tendrá un tiempo límite. Al presionar el gatillo, pasará a un tutorial de Gameplay";
             }
             Debug.Log("Button was clicked");
         }

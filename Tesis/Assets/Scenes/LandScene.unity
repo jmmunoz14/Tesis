@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -373,7 +373,7 @@ MonoBehaviour:
   landsToNutrient: []
   nutrientsTimeToShow: 3.5
   phTimer: 55
-  nutrientsTimer: 55
+  nutrientsTimer: 50
   farmTimer: 0
   izquierdo: {fileID: 1207279532}
   derecho: {fileID: 1145122797}
@@ -24564,7 +24564,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: sdasd
+  m_Text: 
 --- !u!222 &1145122798
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24969,7 +24969,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: sdasd
+  m_Text: 
 --- !u!222 &1207279533
 CanvasRenderer:
   m_ObjectHideFlags: 0
