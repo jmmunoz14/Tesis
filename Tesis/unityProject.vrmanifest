@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.tesis.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\jm.munoz14\\Documents\\GitHub\\Tesis\\Tesis\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Tesis [Testing]"
+        }
+      }
+    }
+  ]
+}

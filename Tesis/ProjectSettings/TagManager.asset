@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - projectile
+  - FxTemporaire
+  - TextGame
+  - PlaneToRepair
+  - Tutorial
+  - PhText
+  - DamagedLand
+  - SafeLand
+  - SafePH
+  - SafeNutrients
   layers:
   - Default
   - TransparentFX
@@ -14,8 +24,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - LeftEye
+  - RightEye
   - 
   - 
   - 
