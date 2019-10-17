@@ -11,6 +11,7 @@ public class SceneHandler : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
     private TextMeshProUGUI text;
+    private TextMeshProUGUI textGameplay;
     private GameObject player;
     private int numberOfTutorial = 0;
     public GameController gameControl;
@@ -21,7 +22,8 @@ public class SceneHandler : MonoBehaviour
     void Awake()
     {
         text = GameObject.Find("Canvas/Text(TMP)").GetComponent<TextMeshProUGUI>();
-        Debug.Log(text);
+        textGameplay = GameObject.Find("TutorialG/CanvasG/TextG").GetComponent<TextMeshProUGUI>();
+
         player = GameObject.Find("Player");
         
        laserPointer.PointerClick += PointerClick;
@@ -43,13 +45,12 @@ public class SceneHandler : MonoBehaviour
             if (numberOfTutorial == 1)
             {
                 text.text = "El dia de hoy tomará el papel de un campesino que debe recuperar y reparar su suelo, lo cual no es una tarea facil. \n" +
-                            "El objetivo es entender el proceso que se lleva a cabo, la dificultad de este proceso y como en muchos casos el suelo es irreparable.";
+                            "El objetivo es entender el proceso que se lleva a cabo, la dificultad de este proceso y como, en muchos casos, el suelo es irreparable.";
             }
             if (numberOfTutorial == 2)
             {
                 text.text = "Usted deberá realizar cada una de las tres tareas y tendrá un tiempo límite. Al presionar el gatillo, pasará a un tutorial de Gameplay";
             }
-            Debug.Log("Button was clicked");
         }
         if (numberOfTutorial == 3)
         {
@@ -59,9 +60,26 @@ public class SceneHandler : MonoBehaviour
         }
         if(numberOfTutorial == 4)
         {
+            textGameplay.text = "En primer lugar, para moverse presione cualquiera de las dos palancas mientras apunta con el brazo en " +
+                                "la dirección deseada. Cuando vea un circulo verde, deje presionar la palanca y el personaje se transportará a esa posición. " +
+                                "Pruebe a moverse un poco por la sala y luego presione el gatillo para continuar.";
+
+        }
+        if(numberOfTutorial == 5)
+        {
+            textGameplay.text = "Para interactuar con los objetos, acerce su mano hasta que al objeto le aparezca un borde amarillo y mantenga presionado " +
+                                "el botón que se encuentra en la parte de abajo de cualquier control junto a su dedo medio. Al momento de dejar de presionar " +
+                                "el botón, se soltará el objeto. Interactue un poco con los objetos antes de continuar.";
+        }
+        if(numberOfTutorial == 6)
+        {
+            textGameplay.text = "Al presionar una vez mas el gatillo, el juego comenzará. Tómese un tiempo para familiarizarse con los controles y " +
+                                "las interacciones antes de comenzar. Cuando se sienta preparado presione el gatillo.";
+        }
+        if(numberOfTutorial == 7)
+        {
             player.transform.position = new Vector3(pPosition.transform.position.x, pPosition.transform.position.y, pPosition.transform.position.z);
             gameControl.StartGame();
-
         }
 
         numberOfTutorial += 1;

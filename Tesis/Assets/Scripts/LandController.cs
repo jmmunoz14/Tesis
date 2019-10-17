@@ -11,14 +11,21 @@ public class LandController : MonoBehaviour
     public GameController gameController;
 	public GameObject[] lands;
 	public Material[] materials;
+
     public List<GameObject> landsToNutrient = new List<GameObject>();
+    public List<GameObject> landsToFarm = new List<GameObject>();
+
     public float nutrientsTimeToShow;
+
 
     private bool phRunning = false;
     private bool nutrientsRunning = false;
+    private bool farmRunning = false;
+
     public float phTimer;
     public float nutrientsTimer;
     public float farmTimer;
+
     public Text izquierdo;
     public Text derecho;
 
@@ -72,6 +79,22 @@ public class LandController : MonoBehaviour
             }
         }
 
+        if(farmRunning)
+        {
+            izquierdo.transform.gameObject.SetActive(true);
+            derecho.transform.gameObject.SetActive(true);
+            farmTimer -= Time.deltaTime;
+            izquierdo.text = farmTimer + " S";
+            derecho.text = farmTimer + " S";
+            if (farmTimer <= 0.0f)
+            {
+                izquierdo.transform.gameObject.SetActive(false);
+                derecho.transform.gameObject.SetActive(false);
+                farmRunning = false;
+                EndFarmPhase();
+            }
+        }
+
     }
 
 	public void initializePhLands()
@@ -116,6 +139,23 @@ public class LandController : MonoBehaviour
         nutrientsRunning = true;
     }
 
+    public void initializeFarmLands()
+    {
+        foreach (var land in lands)
+        {
+            if (land.tag == "SafeNutrients")
+            {
+                landsToFarm.Add(land);
+            }
+        }
+
+        foreach (var land in landsToFarm)
+        {
+            FarmLandController nlc = land.AddComponent<FarmLandController>() as FarmLandController;
+            nlc.materials = materials;
+        }
+        farmRunning = true;
+    }
 
 
     public void EndPhPhase()
@@ -138,6 +178,20 @@ public class LandController : MonoBehaviour
         foreach (var land in landsToNutrient)
         {
             Destroy(land.GetComponent<NutrientLandController>());
+            foreach (Transform child in land.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+        }
+        gameController.SetNextPhase();
+    }
+
+    public void EndFarmPhase()
+    {
+        foreach (var land in landsToFarm)
+        {
+            Destroy(land.GetComponent<FarmLandController>());
             foreach (Transform child in land.transform)
             {
                 Destroy(child.gameObject);

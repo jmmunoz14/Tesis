@@ -63,9 +63,8 @@ public class GameController : MonoBehaviour
                 landController.initializeNutrientsLands();
                 break;
 		case "Farm":
-			break;
-			default:
-			break;
+                landController.initializeFarmLands();
+			    break;
 		}
 	}
 
