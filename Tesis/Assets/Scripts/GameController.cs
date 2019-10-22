@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
 	public LandController landController;
     public GameObject player;
     public GameObject pPosition;
+    private float currentP;
     public GameObject tutorialPosition;
 
     public void StartGame()
@@ -18,8 +19,13 @@ public class GameController : MonoBehaviour
         currentPhase = phases[currentPhaseindex];
         SetUpScene(currentPhase);
     }
-			
-	public void SetNextPhase()
+
+    public void FixedUpdate()
+    {
+        currentP = player.transform.position.x + player.transform.position.y + player.transform.position.z;
+    }
+
+    public void SetNextPhase()
 	{
         currentPhaseindex++;
         if(currentPhaseindex == 2)
@@ -54,11 +60,20 @@ public class GameController : MonoBehaviour
     }
     
 	private void SetUpScene(string phase){
+        float startP = pPosition.transform.position.x + pPosition.transform.position.y + pPosition.transform.position.z;
+        
+        bool quieto = true;
+        while(quieto)
+        {
+            float movimiento = startP - currentP;
+            if (movimiento != 0) { quieto = false; }
+        }
+
 		switch(phase)
 		{
 		case "Ph":
-			landController.initializePhLands();
-		break;
+			    landController.initializePhLands();
+		        break;
 		case "Nutrients":
                 landController.initializeNutrientsLands();
                 break;
