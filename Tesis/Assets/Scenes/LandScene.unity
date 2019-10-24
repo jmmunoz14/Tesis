@@ -260,7 +260,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &80977247
 GameObject:
   m_ObjectHideFlags: 0
@@ -22418,7 +22418,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &425296049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013408786146, guid: 525cdbe33e2709049b014f3e3748e15a,
@@ -22876,7 +22876,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "INFORMACI\xD3N:\n-Las zanahorias solo pueden ser plantadas en las esquinas.\n-
-    El ma\xEDz debe ser plantado en forma de cruz, tomando como base la terrendo central
+    El ma\xEDz debe ser plantado en forma de cruz, tomando como base el terreno central
     para la intersecci\xF3n.\n- Los terrenos restantes deben ser ocupados por tomates."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22946,7 +22946,7 @@ MonoBehaviour:
   m_margin: {x: -495.52023, y: 0, z: -452.7072, w: 0}
   m_textInfo:
     textComponent: {fileID: 490318902}
-    characterCount: 234
+    characterCount: 233
     spriteCount: 0
     spaceCount: 37
     wordCount: 38
@@ -45824,7 +45824,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!4 &823677248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6600512668609291519, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -46254,7 +46254,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &911701551
 GameObject:
   m_ObjectHideFlags: 0
@@ -46403,7 +46403,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &981484322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623713621562292, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -46451,7 +46451,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &991666381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1822811081740728, guid: 9d79a38f83fd64d7890b96cd421bf2a8,
@@ -55314,7 +55314,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &1400284879
 GameObject:
   m_ObjectHideFlags: 0
@@ -55542,7 +55542,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &1420042721
 GameObject:
   m_ObjectHideFlags: 0
@@ -63106,7 +63106,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &1478016205
 GameObject:
   m_ObjectHideFlags: 0
@@ -63324,7 +63324,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &1524785856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623712835243744, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -63372,7 +63372,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &1545926704
 GameObject:
   m_ObjectHideFlags: 0
@@ -63616,7 +63616,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &1583922906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 162750248671691204, guid: 03ccd4a59c451aa4386cfd7e1181299a,
@@ -64936,7 +64936,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &2020930971 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623712650514871, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -64984,7 +64984,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1 &2051427122
 GameObject:
   m_ObjectHideFlags: 0
@@ -65242,7 +65242,7 @@ MonoBehaviour:
     type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
-  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
+  - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
 --- !u!1001 &2088201914
 PrefabInstance:
   m_ObjectHideFlags: 0
