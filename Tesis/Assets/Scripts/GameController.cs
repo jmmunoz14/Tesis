@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         currentPhase = phases[currentPhaseindex];
-		firstime = true
+        firstTime = true;
     }
 
     public void FixedUpdate()
