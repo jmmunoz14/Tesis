@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -243,6 +243,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &76360840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76360837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 2
+  plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
+    type: 3}
+  materials: []
 --- !u!1 &80977247
 GameObject:
   m_ObjectHideFlags: 0
@@ -22370,6 +22386,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &422349057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422349054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 1
+  plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
+    type: 3}
+  materials: []
 --- !u!1 &425296049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013408786146, guid: 525cdbe33e2709049b014f3e3748e15a,
@@ -22814,8 +22846,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "INFORMACI\xD3N:\n-Las zanahorias solo pueden ser plantadas en las esquinas.\n-
-    El ma\xEDz debe ser plantado en los terrenos pares.\n- Los terrenos restantes
-    deben ser ocupados por tomates."
+    El ma\xEDz debe ser plantado en forma de cruz, tomando como base la terrendo central
+    para la intersecci\xF3n.\n- Los terrenos restantes deben ser ocupados por tomates."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22884,12 +22916,12 @@ MonoBehaviour:
   m_margin: {x: -495.52023, y: 0, z: -452.7072, w: 0}
   m_textInfo:
     textComponent: {fileID: 490318902}
-    characterCount: 179
+    characterCount: 234
     spriteCount: 0
-    spaceCount: 28
-    wordCount: 29
+    spaceCount: 37
+    wordCount: 38
     linkCount: 0
-    lineCount: 4
+    lineCount: 5
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -45745,6 +45777,22 @@ MonoBehaviour:
   sourceCollider: {fileID: 6772623712707881432}
   useDistanceFields: 0
   distanceField: {fileID: 11400000, guid: 5eb5ff1af3a3f4a14977448198c232ae, type: 2}
+--- !u!114 &823677246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823677244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 0
+  plantedPlant: {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748,
+    type: 3}
+  materials: []
 --- !u!4 &823677248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6600512668609291519, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -46157,6 +46205,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &894661261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894661258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 1
+  plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
+    type: 3}
+  materials: []
 --- !u!1 &911701551
 GameObject:
   m_ObjectHideFlags: 0
@@ -46288,6 +46352,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &947518257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947518254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 2
+  plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
+    type: 3}
+  materials: []
 --- !u!1 &981484322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623713621562292, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -46318,6 +46398,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &981484325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981484322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 1
+  plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
+    type: 3}
+  materials: []
 --- !u!1 &991666381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1822811081740728, guid: 9d79a38f83fd64d7890b96cd421bf2a8,
@@ -46478,6 +46574,10 @@ PrefabInstance:
     - target: {fileID: 1000011542004260, guid: 5ccf902a46d565441be630bd717cab9e, type: 3}
       propertyPath: m_Name
       value: Carrot_Fruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011542004260, guid: 5ccf902a46d565441be630bd717cab9e, type: 3}
+      propertyPath: m_TagString
+      value: carrot
       objectReference: {fileID: 0}
     - target: {fileID: 4000011229975902, guid: 5ccf902a46d565441be630bd717cab9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46936,7 +47036,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -46947,7 +47047,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: asdasd
+  m_Text: 
 --- !u!222 &1145122798
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47341,7 +47441,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -47352,7 +47452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: asdasd
+  m_Text: 
 --- !u!222 &1207279533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55146,6 +55246,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1394111442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394111439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 1
+  plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
+    type: 3}
+  materials: []
 --- !u!1 &1400284879
 GameObject:
   m_ObjectHideFlags: 0
@@ -55356,6 +55472,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1407047799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407047796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 0
+  plantedPlant: {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748,
+    type: 3}
+  materials: []
 --- !u!1 &1420042721
 GameObject:
   m_ObjectHideFlags: 0
@@ -62902,6 +63034,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1464886444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464886441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 0
+  plantedPlant: {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748,
+    type: 3}
+  materials: []
 --- !u!1 &1478016205
 GameObject:
   m_ObjectHideFlags: 0
@@ -63102,6 +63250,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1523719313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523719310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 1
+  plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
+    type: 3}
+  materials: []
 --- !u!1 &1524785856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623712835243744, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -63132,6 +63296,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1524785859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524785856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 2
+  plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
+    type: 3}
+  materials: []
 --- !u!1 &1545926704
 GameObject:
   m_ObjectHideFlags: 0
@@ -63358,6 +63538,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1553212933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553212930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 0
+  plantedPlant: {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748,
+    type: 3}
+  materials: []
 --- !u!1 &1583922906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 162750248671691204, guid: 03ccd4a59c451aa4386cfd7e1181299a,
@@ -63504,6 +63700,10 @@ PrefabInstance:
     - target: {fileID: 1000013408786146, guid: 525cdbe33e2709049b014f3e3748e15a, type: 3}
       propertyPath: m_Name
       value: Corn_Fruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013408786146, guid: 525cdbe33e2709049b014f3e3748e15a, type: 3}
+      propertyPath: m_TagString
+      value: corn
       objectReference: {fileID: 0}
     - target: {fileID: 4000010194317196, guid: 525cdbe33e2709049b014f3e3748e15a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64656,6 +64856,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2011760525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011760522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 2
+  plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
+    type: 3}
+  materials: []
 --- !u!1 &2020930971 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623712650514871, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -64686,6 +64902,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2020930974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020930971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 1
+  plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
+    type: 3}
+  materials: []
 --- !u!1 &2051427122
 GameObject:
   m_ObjectHideFlags: 0
@@ -64926,6 +65158,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6772623712707881431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2078558842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078558839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec339d43c5275e4c8f0653bde428ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 1
+  plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
+    type: 3}
+  materials: []
 --- !u!1001 &2088201914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65226,6 +65474,10 @@ PrefabInstance:
     - target: {fileID: 1000011675367718, guid: 054e8622a5bae1644b0baa6708dbbc5d, type: 3}
       propertyPath: m_Name
       value: Tomato_Fruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011675367718, guid: 054e8622a5bae1644b0baa6708dbbc5d, type: 3}
+      propertyPath: m_TagString
+      value: tomato
       objectReference: {fileID: 0}
     - target: {fileID: 4000010563502654, guid: 054e8622a5bae1644b0baa6708dbbc5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65584,6 +65836,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlaneToRepair
       objectReference: {fileID: 0}
+    - target: {fileID: 6772623712135719424, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6772623712135719439, guid: f05b2e25c60d1e649bdb41ca541d2b23,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -65688,6 +65945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772623712135719437, guid: f05b2e25c60d1e649bdb41ca541d2b23,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8459754864029481040, guid: f05b2e25c60d1e649bdb41ca541d2b23, type: 3}

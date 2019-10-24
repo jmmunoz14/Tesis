@@ -70,7 +70,7 @@ public class LandController : MonoBehaviour
                 EndNutrientsPhase();
             }
             nutrientsTimeToShow -= Time.deltaTime;
-            if (nutrientsTimeToShow < 0)
+            if (nutrientsTimeToShow < 0.0f)
             {
 				int r = Random.Range (0, num.Count);
                 landsToNutrient[num[r]].GetComponent<NutrientLandController>().EnableText();

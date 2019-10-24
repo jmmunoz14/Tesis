@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FarmLandController : MonoBehaviour
 {
+    public enum plantType {zanahoria, maiz, tomate}
+    public plantType plantOption;
+    public GameObject plantedPlant;
     public Material[] materials;
     // Start is called before the first frame update
     void Start()
