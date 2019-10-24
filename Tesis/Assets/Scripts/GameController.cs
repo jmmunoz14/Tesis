@@ -11,29 +11,21 @@ public class GameController : MonoBehaviour
 	public LandController landController;
     public GameObject player;
     public GameObject pPosition;
-    private float currentP;
-    private float startP;
-    private bool quieto = true;
+	private bool firstTime = false;
     public GameObject tutorialPosition;
 
     public void StartGame()
     {
         currentPhase = phases[currentPhaseindex];
-        startP = pPosition.transform.position.x + pPosition.transform.position.y + pPosition.transform.position.z;
-
-        SetUpScene(currentPhase);
+		firstime = true
     }
 
     public void FixedUpdate()
     {
-        currentP = player.transform.position.x + player.transform.position.y + player.transform.position.z;
-        if(currentP - startP != 0)
+		if((player.transform.position.x != pPosition.transform.position.x) && firstTime)
         {
-            quieto = false;
-        }
-        else
-        {
-            quieto = true;
+			SetUpScene(currentPhase);
+			firstTime = false;
         }
     }
 
@@ -72,9 +64,6 @@ public class GameController : MonoBehaviour
     }
     
 	private void SetUpScene(string phase){
-
-        if (!quieto)
-        {
             switch (phase)
             {
                 case "Ph":
@@ -87,7 +76,6 @@ public class GameController : MonoBehaviour
                     landController.initializeFarmLands();
                     break;
             }
-        }
 	}
 
 }
