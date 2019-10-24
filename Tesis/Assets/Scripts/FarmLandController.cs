@@ -8,20 +8,37 @@ public class FarmLandController : MonoBehaviour
     public plantType plantOption;
     public GameObject plantedPlant;
 	private GameObject child;
+    private bool alreadyPlanted = false;
 	private int numberOfElements = 6;
     public Material[] materials;
  
 
 	public void plant()
 	{
-		Vector3 center = transform.position;
-		for (int i = 0; i < numberOfElements; i++){
-			Vector3 pos = RandomCircle(center,2f);
-			child = Instantiate(plantedPlant, pos, Quaternion.Euler(0,0,0));
-			child.transform.parent = transform;
-		}
+        if(!alreadyPlanted)
+        {
+            Vector3 center = transform.position;
+            for (int i = 0; i < numberOfElements; i++)
+            {
+                Vector3 pos = RandomCircle(center, 2f);
+                child = Instantiate(plantedPlant, pos, Quaternion.Euler(0, 0, 0));
+                child.transform.parent = transform;
+            }
+            gameObject.tag = "SafeLand";
+            Renderer rend = GetComponent<Renderer>();
+            rend.sharedMaterial = materials[0];
+            alreadyPlanted = true;
+        }
+
 	}
 		
+    public void damageLand()
+    {
+        gameObject.tag = "DamagedLand";
+        Renderer rend = GetComponent<Renderer>();
+        rend.sharedMaterial = materials[1];
+
+    }
 
 
 	Vector3 RandomCircle (Vector3 center, float radius  ){

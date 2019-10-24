@@ -258,7 +258,9 @@ MonoBehaviour:
   plantOption: 2
   plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &80977247
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +540,7 @@ MonoBehaviour:
   nutrientsTimeToShow: 3.5
   phTimer: 55
   nutrientsTimer: 50
-  farmTimer: 0
+  farmTimer: 50
   izquierdo: {fileID: 1207279532}
   derecho: {fileID: 1145122797}
   num: 
@@ -22058,6 +22060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09a57d65f9bff94385e13de94a9634b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plantOption: 0
 --- !u!1 &291239616
 GameObject:
   m_ObjectHideFlags: 0
@@ -22413,7 +22416,9 @@ MonoBehaviour:
   plantOption: 1
   plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &425296049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013408786146, guid: 525cdbe33e2709049b014f3e3748e15a,
@@ -22582,6 +22587,19 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!114 &425296059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425296049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09a57d65f9bff94385e13de94a9634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 1
 --- !u!1 &450910670 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 160596, guid: dc06161b6d97feb419f45f03b62e14b9,
@@ -45804,7 +45822,9 @@ MonoBehaviour:
   plantOption: 0
   plantedPlant: {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!4 &823677248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6600512668609291519, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -46232,7 +46252,9 @@ MonoBehaviour:
   plantOption: 1
   plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &911701551
 GameObject:
   m_ObjectHideFlags: 0
@@ -46379,7 +46401,9 @@ MonoBehaviour:
   plantOption: 2
   plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &981484322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623713621562292, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -46425,7 +46449,9 @@ MonoBehaviour:
   plantOption: 1
   plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &991666381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1822811081740728, guid: 9d79a38f83fd64d7890b96cd421bf2a8,
@@ -47936,6 +47962,19 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!114 &1302086365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302086356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09a57d65f9bff94385e13de94a9634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantOption: 2
 --- !u!1001 &1312408128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55273,7 +55312,9 @@ MonoBehaviour:
   plantOption: 1
   plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &1400284879
 GameObject:
   m_ObjectHideFlags: 0
@@ -55499,7 +55540,9 @@ MonoBehaviour:
   plantOption: 0
   plantedPlant: {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &1420042721
 GameObject:
   m_ObjectHideFlags: 0
@@ -63061,7 +63104,9 @@ MonoBehaviour:
   plantOption: 0
   plantedPlant: {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &1478016205
 GameObject:
   m_ObjectHideFlags: 0
@@ -63277,7 +63322,9 @@ MonoBehaviour:
   plantOption: 1
   plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &1524785856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623712835243744, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -63323,7 +63370,9 @@ MonoBehaviour:
   plantOption: 2
   plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &1545926704
 GameObject:
   m_ObjectHideFlags: 0
@@ -63565,7 +63614,9 @@ MonoBehaviour:
   plantOption: 0
   plantedPlant: {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &1583922906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 162750248671691204, guid: 03ccd4a59c451aa4386cfd7e1181299a,
@@ -64883,7 +64934,9 @@ MonoBehaviour:
   plantOption: 2
   plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &2020930971 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772623712650514871, guid: f05b2e25c60d1e649bdb41ca541d2b23,
@@ -64929,7 +64982,9 @@ MonoBehaviour:
   plantOption: 1
   plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1 &2051427122
 GameObject:
   m_ObjectHideFlags: 0
@@ -65185,7 +65240,9 @@ MonoBehaviour:
   plantOption: 1
   plantedPlant: {fileID: 1000012844397656, guid: a97ffd75102541b46b48cffc80ef3da0,
     type: 3}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
+  - {fileID: 2100000, guid: 1b6ad9e6ace69c2448dda1ea645d4556, type: 2}
 --- !u!1001 &2088201914
 PrefabInstance:
   m_ObjectHideFlags: 0

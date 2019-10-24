@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
     public void SetNextPhase()
 	{
         currentPhaseindex++;
-        if(currentPhaseindex == 2)
+        if(currentPhaseindex == 3)
         {
             EndGame();
         }
@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
         GameObject[] totalLands = landController.lands;
         foreach(var land in totalLands)
         {
-            if(land.tag == "SafeNutrients")
+            if(land.tag == "SafeLand")
             {
                 repaired++;
             }

@@ -4,9 +4,25 @@ using UnityEngine;
 
 public class PlantHandler : MonoBehaviour
 {
-	void OnCollisionEnter(Collision collision)
+    public FarmLandController.plantType plantOption;
+
+
+
+    void OnCollisionEnter(Collision collision)
 	{
-		FarmLandController x = collision.gameObject.GetComponent<FarmLandController>();
-		x.plant();
+        if(collision.gameObject.tag == "SafeNutrients")
+        {
+            FarmLandController x = collision.gameObject.GetComponent<FarmLandController>();
+            if (plantOption == x.plantOption)
+            {
+                x.plant();
+            }
+            else
+            {
+                x.damageLand();
+            }
+        }
+
+
 	}
 }

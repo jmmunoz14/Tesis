@@ -148,12 +148,6 @@ public class LandController : MonoBehaviour
                 landsToFarm.Add(land);
             }
         }
-
-        foreach (var land in landsToFarm)
-        {
-            FarmLandController nlc = land.AddComponent<FarmLandController>() as FarmLandController;
-            nlc.materials = materials;
-        }
         farmRunning = true;
     }
 
@@ -191,12 +185,11 @@ public class LandController : MonoBehaviour
     {
         foreach (var land in landsToFarm)
         {
-            Destroy(land.GetComponent<FarmLandController>());
-            foreach (Transform child in land.transform)
+            if(land.gameObject.tag!="SafeLand")
             {
-                Destroy(child.gameObject);
+                land.gameObject.tag = "DamagedLand";
             }
-
+                
         }
         gameController.SetNextPhase();
     }
