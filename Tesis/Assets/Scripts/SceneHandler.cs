@@ -61,15 +61,14 @@ public class SceneHandler : MonoBehaviour
         if(numberOfTutorial == 4)
         {
             textGameplay.text = "En primer lugar, para moverse presione cualquiera de las dos palancas mientras apunta con el brazo en " +
-                                "la dirección deseada. Cuando vea un circulo verde, deje presionar la palanca y el personaje se transportará a esa posición. " +
-                                "Pruebe a moverse un poco por la sala y luego presione el gatillo para continuar.";
+                                "la dirección deseada. Cuando vea un circulo verde, deje presionar la palanca y el personaje se transportará a esa posición. ";
 
         }
         if(numberOfTutorial == 5)
         {
             textGameplay.text = "Para interactuar con los objetos, acerce su mano hasta que al objeto le aparezca un borde amarillo y mantenga presionado " +
                                 "el botón que se encuentra en la parte de abajo de cualquier control junto a su dedo medio. Al momento de dejar de presionar " +
-                                "el botón, se soltará el objeto. Interactue un poco con los objetos antes de continuar.";
+                                "el botón, se soltará el objeto. ";
         }
         if(numberOfTutorial == 6)
         {
