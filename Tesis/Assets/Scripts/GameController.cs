@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
 	public LandController landController;
     public GameObject player;
     public GameObject pPosition;
-	private bool firstTime = false;
+	public bool firstTime = false;
     public GameObject tutorialPosition;
 
     public void StartGame()
@@ -39,8 +39,7 @@ public class GameController : MonoBehaviour
         else
         {
             currentPhase = phases[currentPhaseindex];
-            SetUpScene(currentPhase);
-            player.transform.position = new Vector3(pPosition.transform.position.x, pPosition.transform.position.y, pPosition.transform.position.z);
+            //SetUpScene(currentPhase);
 
         }
 
@@ -50,6 +49,8 @@ public class GameController : MonoBehaviour
     {
         int repaired = 0;
         player.transform.position = new Vector3(tutorialPosition.transform.position.x, tutorialPosition.transform.position.y, tutorialPosition.transform.position.z);
+        Debug.Log(player.transform.position);
+
         TextMeshProUGUI text = GameObject.Find("Canvas/Text(TMP)").GetComponent<TextMeshProUGUI>();
         GameObject[] totalLands = landController.lands;
         foreach(var land in totalLands)

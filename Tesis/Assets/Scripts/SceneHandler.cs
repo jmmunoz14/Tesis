@@ -31,8 +31,7 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
-        Debug.Log(e.target.name);
-
+        
         if (e.target.name == "Plane (1)")
         {
             if (numberOfTutorial == 0)

@@ -538,9 +538,9 @@ MonoBehaviour:
   landsToNutrient: []
   landsToFarm: []
   nutrientsTimeToShow: 3.5
-  phTimer: 55
-  nutrientsTimer: 50
-  farmTimer: 50
+  phTimer: 20
+  nutrientsTimer: 20
+  farmTimer: 20
   izquierdo: {fileID: 1207279532}
   derecho: {fileID: 1145122797}
   num: 
@@ -64746,6 +64746,7 @@ MonoBehaviour:
   landController: {fileID: 164873038}
   player: {fileID: 745010209}
   pPosition: {fileID: 1423791629}
+  firstTime: 0
   tutorialPosition: {fileID: 481061124}
 --- !u!1001 &1938720221
 PrefabInstance:

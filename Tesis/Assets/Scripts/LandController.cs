@@ -116,7 +116,6 @@ public class LandController : MonoBehaviour
         phRunning = true;
         izquierdo.transform.gameObject.SetActive(true);
         derecho.transform.gameObject.SetActive(true);
-
     }
 
     public void initializeNutrientsLands()
@@ -128,15 +127,16 @@ public class LandController : MonoBehaviour
                 landsToNutrient.Add(land);
             }
         }
-   
         foreach (var land in landsToNutrient)
         {
             NutrientLandController nlc = land.AddComponent<NutrientLandController>() as NutrientLandController;
             nlc.materials = materials;
-			num.Add(nutrientsCounter);
-			nutrientsCounter++;
+            num.Add(nutrientsCounter);
+            nutrientsCounter++;
         }
         nutrientsRunning = true;
+            
+        
     }
 
     public void initializeFarmLands()
@@ -148,7 +148,14 @@ public class LandController : MonoBehaviour
                 landsToFarm.Add(land);
             }
         }
-        farmRunning = true;
+        if (landsToFarm.Count == 0)
+        {
+            gameController.EndGame();
+        }
+        else
+        {
+            farmRunning = true;
+        }
     }
 
 
@@ -159,11 +166,33 @@ public class LandController : MonoBehaviour
             Destroy(land.GetComponent<PhLandController>());
             foreach (Transform child in land.transform)
             {
-                Destroy(child.gameObject);
+                if(child.tag != "Limit")
+                {
+                    Destroy(child.gameObject);
+                }
             }
 
         }
-        gameController.SetNextPhase();
+        if (checkPhSafe())
+        {
+            gameController.player.transform.position = new Vector3(gameController.pPosition.transform.position.x, gameController.pPosition.transform.position.y, gameController.pPosition.transform.position.z);
+            gameController.SetNextPhase();
+            gameController.firstTime = true;
+        } else
+        {
+            gameController.EndGame();
+        }
+    }
+    public bool checkPhSafe()
+    {
+        foreach (var land in lands)
+        {
+            if (land.tag == "SafePH")
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -174,11 +203,36 @@ public class LandController : MonoBehaviour
             Destroy(land.GetComponent<NutrientLandController>());
             foreach (Transform child in land.transform)
             {
-                Destroy(child.gameObject);
+                if (child.tag != "Limit")
+                {
+                    Destroy(child.gameObject);
+                }
             }
 
         }
-        gameController.SetNextPhase();
+        if (checkNutrientsSafe())
+        {
+            gameController.player.transform.position = new Vector3(gameController.pPosition.transform.position.x, gameController.pPosition.transform.position.y, gameController.pPosition.transform.position.z);
+            gameController.SetNextPhase();
+
+            gameController.firstTime = true;
+        }
+        else
+        {
+            gameController.EndGame();
+        }
+    }
+
+    public bool checkNutrientsSafe()
+    {
+        foreach (var land in lands)
+        {
+            if (land.tag == "SafeNutrients")
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void EndFarmPhase()
