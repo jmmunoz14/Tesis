@@ -11,6 +11,9 @@ public class FarmLandController : MonoBehaviour
     private bool alreadyPlanted = false;
 	private int numberOfElements = 6;
     public Material[] materials;
+
+    public bool isOk = false;
+    public bool finish = false;
  
 
 	public void plant()

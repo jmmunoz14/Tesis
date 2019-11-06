@@ -10,7 +10,8 @@ public class NutrientLandController : MonoBehaviour
     private bool enable = false;
     private float timeToDie = 7f;
     GameObject myText;
-	private bool hasBeenSafe = false;
+	public bool hasBeenSafe = false;
+    public bool end = false;
 
     public List<GameObject> lands;
     private List<GameObject> landsTexts;
@@ -43,6 +44,7 @@ public class NutrientLandController : MonoBehaviour
             enable = false;
             myText.SetActive(false);
             timeToDie = 7f;
+            end = true;
         }
 
 		if(hasBeenSafe)
@@ -50,6 +52,7 @@ public class NutrientLandController : MonoBehaviour
 			Renderer rend = GetComponent<Renderer>();
 			rend.sharedMaterial = materials[3];
 			gameObject.tag = "SafeNutrients";
+            
 		}
     }
 

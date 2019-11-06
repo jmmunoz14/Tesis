@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -79,4 +80,36 @@ public class GameController : MonoBehaviour
             }
 	}
 
+    public void startSimulation()
+    {
+        var currentPhasesim = phases[currentPhaseindex];
+        SetUpSimScene(currentPhasesim);
+    }
+
+    private void SetUpSimScene(string phase)
+    {
+        switch (phase)
+        {
+            case "Ph":
+                landController.initializeSimPhLand();
+                break;
+            case "Nutrients":
+                landController.initializeSimNutrientsLands();
+                break;
+            case "Farm":
+                landController.initializeSimFarmLands();
+                break;
+        }
+    }
+
+    public void startSimulation2()
+    {
+        var currentPhasesim = phases[1];
+        SetUpSimScene(currentPhasesim);
+    }
+    public void startSimulation3()
+    {
+        var currentPhasesim = phases[2];
+        SetUpSimScene(currentPhasesim);
+    }
 }

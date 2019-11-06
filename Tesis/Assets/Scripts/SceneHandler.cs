@@ -10,19 +10,26 @@ using TMPro;
 public class SceneHandler : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
+
     private TextMeshProUGUI text;
     private TextMeshProUGUI textGameplay;
+    private TextMeshProUGUI textPractice;
+
     private GameObject player;
     private int numberOfTutorial = 0;
+    public int simulationsCompleted = 0;
     public GameController gameControl;
+    public LandController landControl;
 
     public GameObject pPosition;
     public GameObject gPosition;
+    public GameObject practicePosition;
 
     void Awake()
     {
         text = GameObject.Find("Canvas/Text(TMP)").GetComponent<TextMeshProUGUI>();
         textGameplay = GameObject.Find("TutorialG/CanvasG/TextG").GetComponent<TextMeshProUGUI>();
+        textPractice = GameObject.Find("TutorialJuego/CanvasJuego/TextP").GetComponent<TextMeshProUGUI>();
 
         player = GameObject.Find("Player");
         
@@ -54,8 +61,6 @@ public class SceneHandler : MonoBehaviour
         if (numberOfTutorial == 3)
         {
             player.transform.position = new Vector3(gPosition.transform.position.x, gPosition.transform.position.y, gPosition.transform.position.z);
-       
-
         }
         if(numberOfTutorial == 4)
         {
@@ -71,14 +76,62 @@ public class SceneHandler : MonoBehaviour
         }
         if(numberOfTutorial == 6)
         {
-            textGameplay.text = "Al presionar una vez mas el gatillo, el juego comenzará. Tómese un tiempo para familiarizarse con los controles y " +
-                                "las interacciones antes de comenzar. Cuando se sienta preparado presione el gatillo.";
+            textGameplay.text = "Al presionar una vez mas el gatillo, pasará a un último tutorial que le permitirá poner en práctica las mecánicas vistas aquí. Allí podrá " +
+                                "simular las tareas que tendrá que realizar en el juego.";
         }
         if(numberOfTutorial == 7)
+        {
+            player.transform.position = new Vector3(practicePosition.transform.position.x, practicePosition.transform.position.y, practicePosition.transform.position.z);
+        }
+        if(numberOfTutorial == 8)
+        {
+            textPractice.text = "A su izquierda se encuenra un terreno similar a los que encontrará en el juego, y al frente un frasco, un balde y un vegetal. Cada uno correspondiente " + 
+                                "a cada una de las etapas que deberá completar en el juego.";
+        }
+        if(numberOfTutorial == 9)
+        {
+            textPractice.text = "Comenzará con la primera fase. Para ello, tome el frasco transparente y vierta el líquido sobre la tierra " +
+                                "hasta que su PH se encuentre entre 35-y55. Cuando lo logre, apunte y presione el gatillo en esta dirección para continuar.";
+            gameControl.startSimulation();
+        }
+
+        if(numberOfTutorial == 10 && landControl.oksim1)
+        {
+            textPractice.text = "Felicidades por completar la primera simulación. Para la siguiente simulación, recoja el balde y vierta el contenido en la tierra " +
+                                "mientras el letrero de NUTRIR esté activo. Presione el gatillo una vez acabe";
+            gameControl.startSimulation2();
+        }
+        else if(numberOfTutorial == 10 && !landControl.oksim1)
+        {
+            numberOfTutorial -= 1;
+        }
+
+        if(numberOfTutorial == 11 && landControl.oksim2)
+        {
+            textPractice.text = "Felicidades por completar la segunda simulación. Para la última etapa, recoja el vegetal y plántelo en la tierra dejandolo caer. Presione el gatillo al terminar";
+            gameControl.startSimulation3();
+        }
+        else if(numberOfTutorial == 11 && !landControl.oksim2)
+        {
+            numberOfTutorial -= 1;
+        }
+
+        if(numberOfTutorial == 12 && landControl.oksim3)
+        {
+            textPractice.text = "Felicidades, ha completado todas las pruebas. Se encuentra preparado para comenzar el juego.\n" +
+                                "Al presionar el gatillo, será transportado y el juego comenzará. Muchos éxitos! ";
+        }
+        else if(numberOfTutorial == 12 && !landControl.oksim3)
+        {
+            numberOfTutorial -= 1;
+        }
+
+        if(numberOfTutorial == 13)
         {
             player.transform.position = new Vector3(pPosition.transform.position.x, pPosition.transform.position.y, pPosition.transform.position.z);
             gameControl.StartGame();
         }
+
 
         numberOfTutorial += 1;
     }
