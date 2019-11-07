@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -205,12 +205,6 @@ MonoBehaviour:
   - {fileID: 1553212930}
   - {fileID: 1464886441}
   - {fileID: 823677244}
-  simLand: {fileID: 0}
-  nlc: {fileID: 0}
-  farmSim: {fileID: 0}
-  oksim1: 0
-  oksim2: 0
-  oksim3: 0
   materials:
   - {fileID: 2100000, guid: 1a0c4d18584a3f14087077d1dafa042e, type: 2}
   - {fileID: 2100000, guid: 66779585bb974764988f107bd278f7d2, type: 2}
@@ -22973,9 +22967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPointer: {fileID: 450910674}
   simulationsCompleted: 0
-  gameControl: {fileID: 1900068681}
-  landControl: {fileID: 0}
-  pPosition: {fileID: 1423791629}
+  tutorialControl: {fileID: 0}
   gPosition: {fileID: 0}
   practicePosition: {fileID: 0}
 --- !u!1001 &765444929
@@ -31721,15 +31713,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.23
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.14
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -76.19
+      value: -26.6
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalRotation.x
