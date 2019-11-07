@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Valve.VR.Extras;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
@@ -18,10 +19,8 @@ public class SceneHandler : MonoBehaviour
     private GameObject player;
     private int numberOfTutorial = 0;
     public int simulationsCompleted = 0;
-    public GameController gameControl;
-    public LandController landControl;
+	public TutorialController tutorialControl;
 
-    public GameObject pPosition;
     public GameObject gPosition;
     public GameObject practicePosition;
 
@@ -92,44 +91,43 @@ public class SceneHandler : MonoBehaviour
         {
             textPractice.text = "Comenzará con la primera fase. Para ello, tome el frasco transparente y vierta el líquido sobre la tierra " +
                                 "hasta que su PH se encuentre entre 35-y55. Cuando lo logre, apunte y presione el gatillo en esta dirección para continuar.";
-            gameControl.startSimulation();
+			//tutorialControl.startSimulation();
         }
 
-        if(numberOfTutorial == 10 && landControl.oksim1)
+        if(numberOfTutorial == 10)
         {
             textPractice.text = "Felicidades por completar la primera simulación. Para la siguiente simulación, recoja el balde y vierta el contenido en la tierra " +
                                 "mientras el letrero de NUTRIR esté activo. Presione el gatillo una vez acabe";
-            gameControl.startSimulation2();
+			//tutorialControl.startSimulation2();
         }
-        else if(numberOfTutorial == 10 && !landControl.oksim1)
+        else if(numberOfTutorial == 10)
         {
             numberOfTutorial -= 1;
         }
 
-        if(numberOfTutorial == 11 && landControl.oksim2)
+        if(numberOfTutorial == 11 )
         {
             textPractice.text = "Felicidades por completar la segunda simulación. Para la última etapa, recoja el vegetal y plántelo en la tierra dejandolo caer. Presione el gatillo al terminar";
-            gameControl.startSimulation3();
+			//tutorialControl.startSimulation3();
         }
-        else if(numberOfTutorial == 11 && !landControl.oksim2)
+        else if(numberOfTutorial == 11)
         {
             numberOfTutorial -= 1;
         }
 
-        if(numberOfTutorial == 12 && landControl.oksim3)
+        if(numberOfTutorial == 12)
         {
             textPractice.text = "Felicidades, ha completado todas las pruebas. Se encuentra preparado para comenzar el juego.\n" +
                                 "Al presionar el gatillo, será transportado y el juego comenzará. Muchos éxitos! ";
         }
-        else if(numberOfTutorial == 12 && !landControl.oksim3)
+        else if(numberOfTutorial == 12)
         {
             numberOfTutorial -= 1;
         }
 
         if(numberOfTutorial == 13)
         {
-            player.transform.position = new Vector3(pPosition.transform.position.x, pPosition.transform.position.y, pPosition.transform.position.z);
-            gameControl.StartGame();
+			SceneManager.LoadScene("MainMenu");
         }
 
 

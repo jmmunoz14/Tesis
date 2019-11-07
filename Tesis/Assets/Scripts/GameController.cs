@@ -15,7 +15,8 @@ public class GameController : MonoBehaviour
 	public bool firstTime = false;
     public GameObject tutorialPosition;
 
-    public void StartGame()
+
+    public void Start()
     {
         currentPhase = phases[currentPhaseindex];
         firstTime = true;
@@ -41,7 +42,6 @@ public class GameController : MonoBehaviour
         {
             currentPhase = phases[currentPhaseindex];
             //SetUpScene(currentPhase);
-
         }
 
     }
@@ -80,36 +80,5 @@ public class GameController : MonoBehaviour
             }
 	}
 
-    public void startSimulation()
-    {
-        var currentPhasesim = phases[currentPhaseindex];
-        SetUpSimScene(currentPhasesim);
-    }
-
-    private void SetUpSimScene(string phase)
-    {
-        switch (phase)
-        {
-            case "Ph":
-                landController.initializeSimPhLand();
-                break;
-            case "Nutrients":
-                landController.initializeSimNutrientsLands();
-                break;
-            case "Farm":
-                landController.initializeSimFarmLands();
-                break;
-        }
-    }
-
-    public void startSimulation2()
-    {
-        var currentPhasesim = phases[1];
-        SetUpSimScene(currentPhasesim);
-    }
-    public void startSimulation3()
-    {
-        var currentPhasesim = phases[2];
-        SetUpSimScene(currentPhasesim);
-    }
+  
 }

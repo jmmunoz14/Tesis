@@ -11,13 +11,6 @@ public class LandController : MonoBehaviour
     public GameController gameController;
 	public GameObject[] lands;
 
-    public GameObject simLand;
-    private PhLandController simph;
-    public NutrientLandController nlc;
-    public FarmLandController farmSim;
-    public bool oksim1 = false;
-    public bool oksim2 = false;
-    public bool oksim3 = false;
 
     public Material[] materials;
 
@@ -40,34 +33,9 @@ public class LandController : MonoBehaviour
 
     public List<int> num = new List<int>();
 
-
-    private void Start()
-    {
-        simLand = GameObject.Find("TutorialJuego/simLand");
-        simph = simLand.GetComponent<PhLandController>() as PhLandController;
-        nlc = simLand.AddComponent<NutrientLandController>() as NutrientLandController;
-        farmSim = simLand.GetComponent<FarmLandController>() as FarmLandController;
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
-        oksim1 = simph.isPhOK;
-        if (simph.endSim1)
-        {
-            EndSimPhPhase();
-        }
-        oksim2 = nlc.hasBeenSafe;
-        if (nlc.end)
-        {
-            EndSimNutrientsPhase();
-        }
-        oksim3 = farmSim.isOk;
-        if (farmSim.finish)
-        {
-            EndSimFarmPhase();
-        }
-
         if (phRunning)
         {
             phTimer -= Time.deltaTime;
@@ -125,31 +93,7 @@ public class LandController : MonoBehaviour
 
     }
 
-    public void initializeSimFarmLands()
-    {
-        simLand.tag = "SafeNutrients";
-    }
 
-    public void initializeSimNutrientsLands()
-    {
-        nlc.materials = materials;
-        simLand.GetComponent<NutrientLandController>().EnableText();
-    }
-
-    public void initializeSimPhLand()
-    {
-        simph.materials = materials;
-
-        GameObject text = new GameObject();
-        text.tag = "PhText";
-        text.transform.parent = simLand.transform;
-
-        TextMeshPro t = text.AddComponent<TextMeshPro>();
-        t.fontSize = 10;
-        t.transform.localEulerAngles += new Vector3(180, 90, 180);
-        t.transform.position += new Vector3(simLand.transform.position.x, simLand.transform.position.y - 1f, simLand.transform.position.z);
-        text.GetComponent<RectTransform>().sizeDelta = new Vector2(3, 5);
-    }
     public void initializePhLands()
 	{
 		foreach(var land in lands){
@@ -210,23 +154,7 @@ public class LandController : MonoBehaviour
             farmRunning = true;
         }
     }
-    public void EndSimPhPhase()
-    {
-        Destroy(simLand.GetComponent<PhLandController>());
-        foreach (Transform child in simLand.transform)
-        {
-            if (child.tag != "Limit")
-            {
-                Destroy(child.gameObject);
-            }
-        }
-        if (!oksim1)
-        {
-            simph = simLand.AddComponent<PhLandController>() as PhLandController;
-            initializeSimPhLand();
-        }
-        
-    }
+   
 
     public void EndPhPhase()
     {
@@ -264,23 +192,7 @@ public class LandController : MonoBehaviour
         return false;
     }
 
-    public void EndSimNutrientsPhase()
-    {
-        Destroy(simLand.GetComponent<NutrientLandController>());
-        foreach (Transform child in simLand.transform)
-        {
-            if (child.tag != "Limit")
-            {
-                Destroy(child.gameObject);
-            }
-        }
-
-        if (!oksim2)
-        {
-            nlc = simLand.AddComponent<NutrientLandController>() as NutrientLandController;
-            initializeSimNutrientsLands();
-        }
-    }
+  
     public void EndNutrientsPhase()
     {
         foreach (var land in landsToNutrient)
@@ -319,26 +231,7 @@ public class LandController : MonoBehaviour
         }
         return false;
     }
-
-    public void EndSimFarmPhase()
-{
-        Destroy(simLand.GetComponent<FarmLandController>());
-        foreach (Transform child in simLand.transform)
-        {
-            if (child.tag != "Limit")
-            {
-                Destroy(child.gameObject);
-            }
-        }
-
-        if (!oksim3)
-        {
-            farmSim = simLand.AddComponent<FarmLandController>() as FarmLandController;
-            initializeSimFarmLands();
-        }
-
-    }
-
+		
     public void EndFarmPhase()
     {
         foreach (var land in landsToFarm)
