@@ -33,7 +33,9 @@ public class SceneHandler : MonoBehaviour
         player = GameObject.Find("Player");
         
        laserPointer.PointerClick += PointerClick;
+
     }
+    
 
     public void PointerClick(object sender, PointerEventArgs e)
     {

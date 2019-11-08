@@ -9,9 +9,9 @@ public class SimulationLandController : MonoBehaviour
     public TutorialController  tutoController;
     public GameObject simulationLand;
 
-    public PhSimLandCOntroller phlc;
-    public SimNutrientsLandController nlc;
-    public FarmSimLandController flc;
+    private PhSimLandCOntroller phlc;
+    private SimNutrientsLandController nlc;
+    private FarmSimLandController flc;
 
     public bool endSim1 = false;
     public bool endSim2 = false;
@@ -21,29 +21,39 @@ public class SimulationLandController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        flc = simulationLand.GetComponent<FarmSimLandController>() as FarmSimLandController;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (phlc.endSim1)
+        if(phlc != null)
         {
-            EndPhPhase();
+            if (phlc.endSim1)
+            {
+                EndPhPhase();
+            }
         }
-        if (nlc.endNutSim)
+        if(nlc != null)
         {
-            EndNutPhase();
+            if (nlc.endNutSim)
+            {
+                EndNutPhase();
+            }
         }
-        if (flc.finish)
+        if(flc != null)
         {
-            EndFarmPhase();
+            if (flc.finish)
+            {
+                EndFarmPhase();
+            }
         }
     }
 
 
     public void initializePhLand()
     {
+        phlc = simulationLand.AddComponent<PhSimLandCOntroller>() as PhSimLandCOntroller;
         phlc.materials = materials;
 
         GameObject text = new GameObject();
@@ -87,6 +97,7 @@ public class SimulationLandController : MonoBehaviour
     }
     public void initializeNutrients()
     {
+        nlc = simulationLand.AddComponent<SimNutrientsLandController>() as SimNutrientsLandController;
         nlc.materials = materials;
         nlc.EnableText();
     }
