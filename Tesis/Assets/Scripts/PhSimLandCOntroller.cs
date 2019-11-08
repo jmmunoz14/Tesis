@@ -18,10 +18,15 @@ public class PhSimLandCOntroller : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("ACABO DE ENTRAR AL START  " + currentPhLevel);
+        Renderer rend = GetComponent<Renderer>();
+        rend.sharedMaterial = materials[0];
+        gameObject.tag = "PlaneToRepair";
         currentPhLevel = Random.Range(1, 15);
         phText = GetComponentInChildren<TextMeshPro>();
         phText.text = currentPhLevel + "Ph";
     }
+
 
 
     void FixedUpdate()
@@ -29,6 +34,8 @@ public class PhSimLandCOntroller : MonoBehaviour
 
         if (currentPhLevel > optimalMaxLevel)
         {
+            Debug.Log("ACABO DE ENTRAR AL IF MALO  " + currentPhLevel);
+
             Renderer rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[2];
             gameObject.tag = "DamagedLand";
@@ -37,6 +44,7 @@ public class PhSimLandCOntroller : MonoBehaviour
         }
         else if (currentPhLevel >= optimalMinimunLevel && currentPhLevel <= optimalMaxLevel)
         {
+            Debug.Log("ACABO DE ENTRAR AL IF BUENO");
             gameObject.tag = "SafePH";
             Renderer rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[1];

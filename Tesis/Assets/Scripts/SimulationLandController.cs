@@ -83,7 +83,6 @@ public class SimulationLandController : MonoBehaviour
         }
         else
         {
-            phlc = simulationLand.AddComponent<PhSimLandCOntroller>() as PhSimLandCOntroller;
             initializePhLand();
         }
     }
