@@ -99,7 +99,6 @@ public class SimulationLandController : MonoBehaviour
     {
         nlc = simulationLand.AddComponent<SimNutrientsLandController>() as SimNutrientsLandController;
         nlc.materials = materials;
-        nlc.EnableText();
     }
     public void EndNutPhase()
     {

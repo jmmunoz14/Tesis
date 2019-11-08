@@ -8,7 +8,7 @@ public class SimNutrientsLandController : MonoBehaviour
     public int randomN;
     public Material[] materials;
 
-    private bool enable = false;
+    private bool enable = true;
     private float timeToDie = 10f;
     GameObject myText;
     public bool hasBeenSafe = false;
@@ -27,7 +27,6 @@ public class SimNutrientsLandController : MonoBehaviour
         t.transform.localEulerAngles += new Vector3(180, 90, 180);
         t.transform.position += new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
         text.GetComponent<RectTransform>().sizeDelta = new Vector2(5, 5);
-        text.SetActive(false);
         myText = text;
     }
 
@@ -56,12 +55,6 @@ public class SimNutrientsLandController : MonoBehaviour
 
         }
     }
-
-    public void EnableText()
-    {
-        enable = true;
-    }
-
     public void safeLand()
     {
         if (enable)
