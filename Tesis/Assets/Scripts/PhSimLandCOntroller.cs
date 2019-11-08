@@ -23,7 +23,7 @@ public class PhSimLandCOntroller : MonoBehaviour
         rend.sharedMaterial = materials[0];
         gameObject.tag = "PlaneToRepair";
         currentPhLevel = Random.Range(1, 15);
-        phText = GetComponentInChildren<TextMeshPro>();
+        phText = gameObject.GetComponentInChildren<TextMeshPro>();
         phText.text = currentPhLevel + "Ph";
     }
 
@@ -39,6 +39,8 @@ public class PhSimLandCOntroller : MonoBehaviour
             Renderer rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[2];
             gameObject.tag = "DamagedLand";
+            phText = gameObject.GetComponentInChildren<TextMeshPro>();
+            phText.text = currentPhLevel + "Ph";
             setPhState(false);
             endSim1 = true;
         }
@@ -48,8 +50,11 @@ public class PhSimLandCOntroller : MonoBehaviour
             gameObject.tag = "SafePH";
             Renderer rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[1];
+            phText = gameObject.GetComponentInChildren<TextMeshPro>();
+            phText.text = currentPhLevel + "Ph";
             setPhState(true);
             endSim1 = true;
+
         }
     }
 

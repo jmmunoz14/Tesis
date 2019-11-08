@@ -53,7 +53,8 @@ public class SimulationLandController : MonoBehaviour
 
     public void initializePhLand()
     {
-        phlc = simulationLand.AddComponent<PhSimLandCOntroller>() as PhSimLandCOntroller;
+        Debug.Log("ENTRE A INICIALIZAR PH");
+        phlc = simulationLand.AddComponent<PhSimLandCOntroller>();
         phlc.materials = materials;
 
         GameObject text = new GameObject();
@@ -69,25 +70,23 @@ public class SimulationLandController : MonoBehaviour
 
     private void EndPhPhase()
     {
-        Destroy(simulationLand.GetComponent<PhLandController>());
-        foreach (Transform child in simulationLand.transform)
-        {
-            if (child.tag != "Limit")
-            {
-                Destroy(child.gameObject);
-            }
-        }
+        Debug.Log("ENTRE A ENDPHASE");
+
         if (checkPhSafe())
         {
+            Debug.Log("ENTRE A TRUE CHECKPH");
             endSim1 = true;
         }
         else
         {
+            Debug.Log("ENTRE A FALSE CHECKPH");
+            Destroy(simulationLand.GetComponent<PhSimLandCOntroller>());
             initializePhLand();
         }
     }
     public bool checkPhSafe()
     {
+
         if (simulationLand.tag == "SafePH")
         {
             return true;
@@ -96,12 +95,7 @@ public class SimulationLandController : MonoBehaviour
     }
     public void initializeNutrients()
     {
-        nlc = simulationLand.AddComponent<SimNutrientsLandController>() as SimNutrientsLandController;
-        nlc.materials = materials;
-    }
-    public void EndNutPhase()
-    {
-        Destroy(simulationLand.GetComponent<NutrientLandController>());
+
         foreach (Transform child in simulationLand.transform)
         {
             if (child.tag != "Limit")
@@ -109,6 +103,17 @@ public class SimulationLandController : MonoBehaviour
                 Destroy(child.gameObject);
             }
         }
+
+        Destroy(simulationLand.GetComponent<PhSimLandCOntroller>());
+        nlc = simulationLand.AddComponent<SimNutrientsLandController>() as SimNutrientsLandController;
+        nlc.materials = materials;
+    }
+    public void EndNutPhase()
+    {
+
+        Destroy(simulationLand.GetComponent<NutrientLandController>());
+        foreach (Transform child in simulationLand.transform)
+
         if (checkNutrientsSafe())
         {
             endSim2 = true;
@@ -129,6 +134,17 @@ public class SimulationLandController : MonoBehaviour
     }
     public void initializeFarm()
     {
+        foreach (Transform child in simulationLand.transform)
+        {
+            if (child.tag != "Limit")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        flc = simulationLand.AddComponent<FarmSimLandController>();
+        flc.materials = materials;
+
 
     }
     private void EndFarmPhase()
