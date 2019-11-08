@@ -9,9 +9,9 @@ public class SimulationLandController : MonoBehaviour
     public TutorialController  tutoController;
     public GameObject simulationLand;
 
-    private PhSimLandCOntroller phlc;
-    private SimNutrientsLandController nlc;
-    private FarmSimLandController flc;
+    public PhSimLandCOntroller phlc;
+    public SimNutrientsLandController nlc;
+    public FarmSimLandController flc;
 
     public bool endSim1 = false;
     public bool endSim2 = false;
@@ -21,9 +21,7 @@ public class SimulationLandController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        phlc = simulationLand.AddComponent<PhSimLandCOntroller>() as PhSimLandCOntroller;
-        nlc = simulationLand.AddComponent<SimNutrientsLandController>() as SimNutrientsLandController;
-        flc = simulationLand.GetComponent<FarmSimLandController>();
+
     }
 
     // Update is called once per frame

@@ -491,6 +491,7 @@ MonoBehaviour:
   currentPhase: 
   endPhSim: 0
   endNutPhase: 0
+  endFarmPhase: 0
   landController: {fileID: 1836753160}
 --- !u!4 &963421300
 Transform:
@@ -852,8 +853,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutoController: {fileID: 963421299}
   simulationLand: {fileID: 1836753159}
+  phlc: {fileID: 1836753168}
+  nlc: {fileID: 1836753167}
+  flc: {fileID: 1836753165}
   endSim1: 0
   endSim2: 0
+  endSim3: 0
   materials:
   - {fileID: 2100000, guid: 1a0c4d18584a3f14087077d1dafa042e, type: 2}
   - {fileID: 2100000, guid: 66779585bb974764988f107bd278f7d2, type: 2}
@@ -920,6 +925,40 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1836753156}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1836753167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836753159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff96f6954c3d0a4d9f7757f9cd90b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomN: 0
+  materials: []
+  hasBeenSafe: 0
+  endNutSim: 0
+  lands: []
+--- !u!114 &1836753168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836753159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8733b3404533fe64d9c8e4070072164a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optimalMinimunLevel: 35
+  optimalMaxLevel: 55
+  endSim1: 0
+  materials: []
+  isPhOK: 0
 --- !u!1 &1851916867
 GameObject:
   m_ObjectHideFlags: 0
