@@ -19,21 +19,23 @@ public class SceneHandler : MonoBehaviour
     private GameObject player;
     private int numberOfTutorial = 0;
     public int simulationsCompleted = 0;
-	public TutorialController tutorialControl;
+    public TutorialController tutorialC;
 
     public GameObject gPosition;
     public GameObject practicePosition;
 
     void Awake()
     {
-        text = GameObject.Find("Canvas/Text(TMP)").GetComponent<TextMeshProUGUI>();
-        textGameplay = GameObject.Find("TutorialG/CanvasG/TextG").GetComponent<TextMeshProUGUI>();
-        textPractice = GameObject.Find("TutorialJuego/CanvasJuego/TextP").GetComponent<TextMeshProUGUI>();
+        text = GameObject.Find("TutorialSpace/Tutorial/Canvas/Text(TMP)").GetComponent<TextMeshProUGUI>();
+        textGameplay = GameObject.Find("TutorialSpace/TutorialG/CanvasG/TextG").GetComponent<TextMeshProUGUI>();
+        textPractice = GameObject.Find("TutorialSpace/TutorialJuego/CanvasJuego/TextP").GetComponent<TextMeshProUGUI>();
 
         player = GameObject.Find("Player");
         
        laserPointer.PointerClick += PointerClick;
+
     }
+    
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
@@ -90,38 +92,41 @@ public class SceneHandler : MonoBehaviour
         if(numberOfTutorial == 9)
         {
             textPractice.text = "Comenzará con la primera fase. Para ello, tome el frasco transparente y vierta el líquido sobre la tierra " +
-                                "hasta que su PH se encuentre entre 35-y55. Cuando lo logre, apunte y presione el gatillo en esta dirección para continuar.";
-			//tutorialControl.startSimulation();
+                                "hasta que su PH se encuentre entre 35 y 55. Cuando lo logre, apunte y presione el gatillo en esta dirección para continuar.";
+			tutorialC.startSimulationPH();
         }
 
-        if(numberOfTutorial == 10)
+        if(numberOfTutorial == 10 && tutorialC.endPhSim)
         {
             textPractice.text = "Felicidades por completar la primera simulación. Para la siguiente simulación, recoja el balde y vierta el contenido en la tierra " +
                                 "mientras el letrero de NUTRIR esté activo. Presione el gatillo una vez acabe";
-			//tutorialControl.startSimulation2();
+            tutorialC.startSimulationNutrients();
         }
-        else if(numberOfTutorial == 10)
+        else if(numberOfTutorial == 10 && !tutorialC.endPhSim)
         {
+            textPractice.text = "Aún no ha terminado la simulación actual.";
             numberOfTutorial -= 1;
         }
 
-        if(numberOfTutorial == 11 )
+        if(numberOfTutorial == 11 && tutorialC.endNutPhase)
         {
             textPractice.text = "Felicidades por completar la segunda simulación. Para la última etapa, recoja el vegetal y plántelo en la tierra dejandolo caer. Presione el gatillo al terminar";
-			//tutorialControl.startSimulation3();
+            tutorialC.startSimulationFarm();
         }
-        else if(numberOfTutorial == 11)
+        else if(numberOfTutorial == 11 && !tutorialC.endNutPhase)
         {
+            textPractice.text = "Aún no ha terminado la simulación actual.";
             numberOfTutorial -= 1;
         }
 
-        if(numberOfTutorial == 12)
+        if(numberOfTutorial == 12 && tutorialC.endFarmPhase)
         {
             textPractice.text = "Felicidades, ha completado todas las pruebas. Se encuentra preparado para comenzar el juego.\n" +
                                 "Al presionar el gatillo, será transportado y el juego comenzará. Muchos éxitos! ";
         }
-        else if(numberOfTutorial == 12)
+        else if(numberOfTutorial == 12 && !tutorialC.endFarmPhase)
         {
+            textPractice.text = "Aún no ha terminado la simulación actual.";
             numberOfTutorial -= 1;
         }
 
