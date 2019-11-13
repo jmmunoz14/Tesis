@@ -112,8 +112,6 @@ public class SimulationLandController : MonoBehaviour
     {
 
         Destroy(simulationLand.GetComponent<NutrientLandController>());
-        foreach (Transform child in simulationLand.transform)
-
         if (checkNutrientsSafe())
         {
             endSim2 = true;
@@ -142,7 +140,7 @@ public class SimulationLandController : MonoBehaviour
             }
         }
 
-        flc = simulationLand.AddComponent<FarmSimLandController>();
+        flc = simulationLand.GetComponent<FarmSimLandController>();
         flc.materials = materials;
 
 
