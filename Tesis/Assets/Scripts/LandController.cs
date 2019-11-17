@@ -245,12 +245,16 @@ public class LandController : MonoBehaviour
         foreach (var land in landsToNutrient)
         {
             Destroy(land.GetComponent<NutrientLandController>());
+			foreach (Transform child in land.transform) {
+				if(child.gameObject.tag == "NutrientText")
+					GameObject.Destroy(child.gameObject);
+			}
         }
         if (checkNutrientsSafe())
         {
             gameController.player.transform.position = new Vector3(gameController.pPosition.transform.position.x, gameController.pPosition.transform.position.y, gameController.pPosition.transform.position.z);
+			gameController.firstTime = true;
             gameController.SetNextPhase();
-            gameController.firstTime = true;
         }
         else
         {

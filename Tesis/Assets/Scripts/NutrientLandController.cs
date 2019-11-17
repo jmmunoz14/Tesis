@@ -21,6 +21,7 @@ public class NutrientLandController : MonoBehaviour
     void Start()
     {
         GameObject text = new GameObject();
+		text.tag = "NutrientText";
         text.transform.parent = transform;
         TextMeshPro t = text.AddComponent<TextMeshPro>();
         t.fontSize = 10;
