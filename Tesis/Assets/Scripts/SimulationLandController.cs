@@ -53,7 +53,6 @@ public class SimulationLandController : MonoBehaviour
 
     public void initializePhLand()
     {
-        Debug.Log("ENTRE A INICIALIZAR PH");
         phlc = simulationLand.AddComponent<PhSimLandCOntroller>();
         phlc.materials = materials;
 
@@ -70,16 +69,13 @@ public class SimulationLandController : MonoBehaviour
 
     private void EndPhPhase()
     {
-        Debug.Log("ENTRE A ENDPHASE");
 
         if (checkPhSafe())
         {
-            Debug.Log("ENTRE A TRUE CHECKPH");
             endSim1 = true;
         }
         else
         {
-            Debug.Log("ENTRE A FALSE CHECKPH");
             Destroy(simulationLand.GetComponent<PhSimLandCOntroller>());
             initializePhLand();
         }
@@ -95,7 +91,6 @@ public class SimulationLandController : MonoBehaviour
     }
     public void initializeNutrients()
     {
-
         foreach (Transform child in simulationLand.transform)
         {
             if (child.tag != "Limit")
@@ -136,6 +131,7 @@ public class SimulationLandController : MonoBehaviour
         {
             if (child.tag != "Limit")
             {
+                Debug.Log(child.gameObject + "");
                 Destroy(child.gameObject);
             }
         }

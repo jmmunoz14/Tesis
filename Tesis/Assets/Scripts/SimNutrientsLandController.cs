@@ -9,7 +9,6 @@ public class SimNutrientsLandController : MonoBehaviour
     public Material[] materials;
 
     private bool enable = true;
-    private float timeToDie = 10f;
     GameObject myText;
     public bool hasBeenSafe = false;
     public bool endNutSim = false;
@@ -33,22 +32,14 @@ public class SimNutrientsLandController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (enable & timeToDie > 0)
+        if (enable)
         {
+            Debug.Log("ENTRA A ACTIVAR EL TEXTO");
             myText.SetActive(true);
-            timeToDie -= Time.deltaTime;
         }
-
-        if (timeToDie <= 0)
-        {
-            enable = false;
-            myText.SetActive(false);
-            timeToDie = 7f;
-            endNutSim = true;
-        }
-
         if (hasBeenSafe)
         {
+            Debug.Log("SE SALVA");
             Renderer rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[3];
             gameObject.tag = "SafeNutrients";
