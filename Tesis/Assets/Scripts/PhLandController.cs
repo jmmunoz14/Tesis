@@ -6,8 +6,8 @@ using TMPro;
 public class PhLandController : MonoBehaviour
 {
 
-	public float optimalMinimunLevel = 35;
-    public float optimalMaxLevel = 55;
+	public float optimalMinimunLevel = 7;
+    public float optimalMaxLevel = 8;
 
     private float currentPhLevel;
     private TextMeshPro phText;
@@ -18,7 +18,7 @@ public class PhLandController : MonoBehaviour
 		
     void Start()
     {
-		currentPhLevel = Random.Range(1, 15);
+		currentPhLevel = Random.Range(0, 6);
         phText = GetComponentInChildren<TextMeshPro>();
         phText.text = currentPhLevel + "Ph";
     }
@@ -49,7 +49,7 @@ public class PhLandController : MonoBehaviour
 
 	public void increasePHLevel()
 	{
-		currentPhLevel += 0.01f*Random.Range(1,25);
+		currentPhLevel += 0.01f*Random.Range(0.15f,0.50f);
         phText.text = currentPhLevel + "Ph";
         
 	}
