@@ -33,7 +33,7 @@ public class LandController : MonoBehaviour
 
     public List<int> num = new List<int>();
 
-	private bool isNormalMode= true;
+	private bool isNormalMode = true;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -196,6 +196,10 @@ public class LandController : MonoBehaviour
         foreach (var land in lands)
         {
             Destroy(land.GetComponent<PhLandController>());
+			foreach (Transform child in land.transform) {
+				if(child.gameObject.tag == "PhText")
+				GameObject.Destroy(child.gameObject);
+			}
         }
         if (checkPhSafe())
         {

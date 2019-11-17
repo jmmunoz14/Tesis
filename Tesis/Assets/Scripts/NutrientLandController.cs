@@ -15,7 +15,9 @@ public class NutrientLandController : MonoBehaviour
 
     public List<GameObject> lands;
     private List<GameObject> landsTexts;
-    // Start is called before the first frame update
+	private bool isNormaldMode;
+   
+
     void Start()
     {
         GameObject text = new GameObject();
@@ -24,16 +26,16 @@ public class NutrientLandController : MonoBehaviour
         t.fontSize = 10;
         t.text = "Nutrir!";
         t.transform.localEulerAngles += new Vector3(180, 90, 180);
-       t.transform.position += new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
-            text.GetComponent<RectTransform>().sizeDelta = new Vector2(5, 5);
-            text.SetActive(false);
+        t.transform.position += new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
+        text.GetComponent<RectTransform>().sizeDelta = new Vector2(5, 5);
+        text.SetActive(false);
         myText = text;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (enable & timeToDie >0)
+        if (enable & timeToDie > 0)
         {
             myText.SetActive(true);
             timeToDie -= Time.deltaTime;
