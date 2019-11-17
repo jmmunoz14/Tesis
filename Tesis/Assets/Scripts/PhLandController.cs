@@ -15,7 +15,6 @@ public class PhLandController : MonoBehaviour
 	public Material[] materials;
 
 	public bool isPhOK = false;
-	private bool activeObject = true;
 		
     void Start()
     {
@@ -26,15 +25,12 @@ public class PhLandController : MonoBehaviour
 
 
     void FixedUpdate() {
-
-	if(activeObject){  
 		if (currentPhLevel > optimalMaxLevel)
 			{
 			Renderer rend = GetComponent<Renderer>();
 					rend.sharedMaterial = materials[2];
 					gameObject.tag = "DamagedLand";
 					setPhState(false);
-					activeObject = false;
 				}
 			else if (currentPhLevel >= optimalMinimunLevel && currentPhLevel <= optimalMaxLevel)
 			{
@@ -42,9 +38,7 @@ public class PhLandController : MonoBehaviour
 				Renderer rend = GetComponent<Renderer>();
 				rend.sharedMaterial = materials[1];
 				setPhState(true);
-				activeObject = false;
 			}
-		}
 
     }
 
