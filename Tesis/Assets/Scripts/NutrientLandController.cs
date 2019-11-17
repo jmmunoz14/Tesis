@@ -15,7 +15,7 @@ public class NutrientLandController : MonoBehaviour
 
     public List<GameObject> lands;
     private List<GameObject> landsTexts;
-	private bool isNormaldMode;
+	private int isNormalMode;
    
 
     void Start()
@@ -31,6 +31,8 @@ public class NutrientLandController : MonoBehaviour
         text.GetComponent<RectTransform>().sizeDelta = new Vector2(5, 5);
         text.SetActive(false);
         myText = text;
+
+		isNormalMode = PlayerPrefs.GetInt("isNormalMode", 1);
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class NutrientLandController : MonoBehaviour
             timeToDie -= Time.deltaTime;
         }
 
-        if (timeToDie <= 0)
+		if (timeToDie <= 0 && (isNormalMode == 0))
         {
             enable = false;
             myText.SetActive(false);

@@ -110,6 +110,14 @@ public class LandController : MonoBehaviour
 
 			if (nutrientsRunning)
 			{
+				nutrientsTimeToShow -= Time.deltaTime;
+				if (nutrientsTimeToShow < 0.0f)
+				{
+					int r = Random.Range (0, num.Count);
+					landsToNutrient[num[r]].GetComponent<NutrientLandController>().EnableText();
+					num.RemoveAt(r);
+					nutrientsTimeToShow = 2f;
+				}
 				if(checkNutrientsSafe())
 				{
 					nutrientsRunning = false;
