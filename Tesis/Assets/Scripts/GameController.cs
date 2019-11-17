@@ -42,7 +42,6 @@ public class GameController : MonoBehaviour
         else
         {
             currentPhase = phases[currentPhaseindex];
-            SetUpScene(currentPhase);
         }
 
     }
