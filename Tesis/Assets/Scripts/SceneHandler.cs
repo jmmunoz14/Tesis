@@ -30,7 +30,7 @@ public class SceneHandler : MonoBehaviour
         textGameplay = GameObject.Find("TutorialSpace/TutorialG/CanvasG/TextG").GetComponent<TextMeshProUGUI>();
         textPractice = GameObject.Find("TutorialSpace/TutorialJuego/CanvasJuego/TextP").GetComponent<TextMeshProUGUI>();
 
-        player = GameObject.Find("Player");
+        player = GameObject.Find("TutorialPlayer");
         
        laserPointer.PointerClick += PointerClick;
 
@@ -133,7 +133,9 @@ public class SceneHandler : MonoBehaviour
 
         if(numberOfTutorial == 13)
         {
+            Destroy(player);
 			SceneManager.LoadScene("MainMenu");
+            
         }
 
 

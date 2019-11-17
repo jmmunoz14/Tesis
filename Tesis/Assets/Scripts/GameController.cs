@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -13,8 +14,15 @@ public class GameController : MonoBehaviour
     public GameObject player;
     public GameObject pPosition;
 	public bool firstTime = false;
-    public GameObject tutorialPosition;
-	private int isNormalMode;
+    public TextMeshProUGUI safeLeftText;
+    public TextMeshProUGUI timeLeftText;
+    public TextMeshProUGUI safeRightText;
+    public TextMeshProUGUI timeRightText;
+    public Canvas endGameCanvasLeft;
+    public Canvas endGameCanvasRight;
+    private int isNormalMode;
+    public float normalTimer=0f;
+    private bool isPlaying = false;
 
     public void Start()
 	{
@@ -25,10 +33,16 @@ public class GameController : MonoBehaviour
 
     public void FixedUpdate()
     {
-		if((player.transform.position.x != pPosition.transform.position.x) && firstTime)
+        if (isNormalMode == 1 && isPlaying)
+        {
+            normalTimer += Time.deltaTime;
+        }
+     
+        if ((player.transform.position.x != pPosition.transform.position.x) && firstTime)
         {
 			SetUpScene(currentPhase);
 			firstTime = false;
+            isPlaying = true;
         }
     }
 
@@ -48,11 +62,8 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
+        isPlaying = false;
         int repaired = 0;
-        player.transform.position = new Vector3(tutorialPosition.transform.position.x, tutorialPosition.transform.position.y, tutorialPosition.transform.position.z);
-        Debug.Log(player.transform.position);
-
-        TextMeshProUGUI text = GameObject.Find("Canvas/Text(TMP)").GetComponent<TextMeshProUGUI>();
         GameObject[] totalLands = landController.lands;
         foreach(var land in totalLands)
         {
@@ -62,7 +73,17 @@ public class GameController : MonoBehaviour
             }
         }
         double percentage = (repaired * 100) / totalLands.Length; 
-        text.text = "Lograste reparar el " + percentage + "% de las tierras";
+        safeLeftText.text = "Lograste reparar el " + percentage + "% de las tierras";
+        safeRightText.text = "Lograste reparar el " + percentage + "% de las tierras";
+
+        if (isNormalMode == 1)
+        {
+            timeLeftText.text = "Tu tiempo fue de " + normalTimer + " SEGUNDOS.";
+            timeRightText.text = "Tu tiempo fue de " + normalTimer + " SEGUNDOS.";
+        }
+          
+        endGameCanvasLeft.gameObject.SetActive(true);
+        endGameCanvasRight.gameObject.SetActive(true);
     }
     
 	private void SetUpScene(string phase){
