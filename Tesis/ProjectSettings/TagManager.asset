@@ -17,6 +17,8 @@ TagManager:
   - carrot
   - tomato
   - corn
+  - Limit
+  - NutrientText
   layers:
   - Default
   - TransparentFX
