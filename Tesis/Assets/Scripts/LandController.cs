@@ -38,6 +38,9 @@ public class LandController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+		Debug.Log("ISNORMALMODE: " + isNormalMode);
+		Debug.Log("PHrUNNING: " + phRunning);
+		Debug.Log("Nutrients: " + nutrientsRunning);
 		if(!isNormalMode)
 		{
 			if (phRunning)
@@ -127,9 +130,9 @@ public class LandController : MonoBehaviour
     }
 
 
-    public void initializePhLands(bool isNormalMode)
+    public void initializePhLands(bool mode)
 	{
-		isNormalMode = isNormalMode;
+		isNormalMode = mode;
 		foreach(var land in lands){
 			PhLandController phlc = land.AddComponent<PhLandController>() as PhLandController;
 			phlc.materials = materials;
@@ -149,9 +152,8 @@ public class LandController : MonoBehaviour
         derecho.transform.gameObject.SetActive(true);
     }
 
-	public void initializeNutrientsLands(bool isNormalMode)
+	public void initializeNutrientsLands()
     {
-		isNormalMode = isNormalMode;
 		int nutrientsCounter = 0;
         foreach (var land in lands)
         {
@@ -167,13 +169,10 @@ public class LandController : MonoBehaviour
             nutrientsCounter++;
         }
         nutrientsRunning = true;
-            
-        
     }
 
-	public void initializeFarmLands(bool isNormalMode)
+	public void initializeFarmLands()
     {
-		isNormalMode = isNormalMode;
 		foreach (var land in landsToNutrient)
         {
             if (land.tag == "SafeNutrients")
