@@ -111,11 +111,14 @@ public class LandController : MonoBehaviour
 			if (nutrientsRunning)
 			{
 				nutrientsTimeToShow -= Time.deltaTime;
-				if (nutrientsTimeToShow < 0.0f)
+				if (nutrientsTimeToShow < 0.0f && num.Count > 0)
 				{
+                 
 					int r = Random.Range (0, num.Count);
-					landsToNutrient[num[r]].GetComponent<NutrientLandController>().EnableText();
+                    Debug.Log("random" + r);
+                    landsToNutrient[num[r]].GetComponent<NutrientLandController>().EnableText();
 					num.RemoveAt(r);
+                    Debug.Log("num " + num);
 					nutrientsTimeToShow = 2f;
 				}
 				if(checkNutrientsSafe())
@@ -285,13 +288,16 @@ public class LandController : MonoBehaviour
 		}
 		else
 		{
+            Debug.Log("FIN NUTRIENTES?");
 			foreach (var land in landsToNutrient)
 			{
 				if (land.tag != "SafeNutrients" && land.tag != "DamagedLand")
 				{
+                    Debug.Log("NO FIN");
 					return false;
 				}
 			}
+            Debug.Log("SI FIN");
 			return true;
 		}
     }
