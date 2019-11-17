@@ -123,6 +123,7 @@ public class SceneHandler : MonoBehaviour
         {
             textPractice.text = "Felicidades, ha completado todas las pruebas. Se encuentra preparado para comenzar el juego.\n" +
                                 "Al presionar el gatillo, será transportado y el juego comenzará. Muchos éxitos! ";
+    
         }
         else if(numberOfTutorial == 12 && !tutorialC.endFarmPhase)
         {

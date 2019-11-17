@@ -105,15 +105,7 @@ public class SimulationLandController : MonoBehaviour
     }
     public void EndNutPhase()
     {
-        foreach (Transform child in simulationLand.transform)
-        {
-            if (child.tag != "Limit")
-            {
-                Debug.Log(child.gameObject + "");
-                Destroy(child.gameObject);
-            }
-        }
-
+       
         Destroy(simulationLand.GetComponent<NutrientLandController>());
         if (checkNutrientsSafe())
         {
@@ -135,8 +127,15 @@ public class SimulationLandController : MonoBehaviour
     }
     public void initializeFarm()
     {
-        
-
+        foreach (Transform child in simulationLand.transform)
+        {
+            if (child.tag != "Limit")
+            {
+                Debug.Log(child.gameObject + "");
+                Destroy(child.gameObject);
+            }
+        }
+        Debug.Log("INICIALIZANDO CULTIVOS");
         flc = simulationLand.GetComponent<FarmSimLandController>();
         flc.materials = materials;
 

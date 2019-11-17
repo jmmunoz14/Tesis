@@ -11,6 +11,7 @@ public class SimNutrientsLandController : MonoBehaviour
     private bool enable = true;
     GameObject myText;
     public bool hasBeenSafe = false;
+    private bool done = false;
     public bool endNutSim = false;
 
     public List<GameObject> lands;
@@ -36,13 +37,14 @@ public class SimNutrientsLandController : MonoBehaviour
         {
             myText.SetActive(true);
         }
-        if (hasBeenSafe)
+        if (hasBeenSafe && !done)
         {
+            Debug.Log("SALVA NUTRIENTES");
             Renderer rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[3];
             gameObject.tag = "SafeNutrients";
             myText.SetActive(false);
-
+            done = true;
         }
     }
     public void safeLand()

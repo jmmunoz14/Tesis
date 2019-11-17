@@ -20,6 +20,7 @@ public class FarmSimLandController : MonoBehaviour
     {
         if (!alreadyPlanted)
         {
+            Debug.Log("SALVA CULTIVOS");
             Vector3 center = transform.position;
             for (int i = 0; i < numberOfElements; i++)
             {
