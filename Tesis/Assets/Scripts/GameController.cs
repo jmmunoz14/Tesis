@@ -14,10 +14,10 @@ public class GameController : MonoBehaviour
     public GameObject pPosition;
 	public bool firstTime = false;
     public GameObject tutorialPosition;
-	private int isNormalMode = 1;
+	private int isNormalMode;
 
     public void Start()
-    {
+	{
 		isNormalMode = PlayerPrefs.GetInt("isNormalMode", 1);
         currentPhase = phases[currentPhaseindex];
         firstTime = true;
@@ -72,10 +72,10 @@ public class GameController : MonoBehaviour
 			landController.initializePhLands(intToBool(isNormalMode));
                     break;
                 case "Nutrients":
-			landController.initializeNutrientsLands(intToBool(isNormalMode));
+			landController.initializeNutrientsLands();
                     break;
                 case "Farm":
-			landController.initializeFarmLands(intToBool(isNormalMode));
+			landController.initializeFarmLands();
                     break;
             }
 	}
