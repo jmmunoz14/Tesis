@@ -34,15 +34,14 @@ public class SimNutrientsLandController : MonoBehaviour
     {
         if (enable)
         {
-            Debug.Log("ENTRA A ACTIVAR EL TEXTO");
             myText.SetActive(true);
         }
         if (hasBeenSafe)
         {
-            Debug.Log("SE SALVA");
             Renderer rend = GetComponent<Renderer>();
             rend.sharedMaterial = materials[3];
             gameObject.tag = "SafeNutrients";
+            myText.SetActive(false);
 
         }
     }
