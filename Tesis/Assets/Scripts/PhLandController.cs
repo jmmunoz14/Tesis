@@ -11,11 +11,11 @@ public class PhLandController : MonoBehaviour
 
     private float currentPhLevel;
     private TextMeshPro phText;
-    public bool endSim1 = false;
 
 	public Material[] materials;
 
 	public bool isPhOK = false;
+	private bool activeObject = true;
 		
     void Start()
     {
@@ -27,22 +27,25 @@ public class PhLandController : MonoBehaviour
 
     void FixedUpdate() {
 
-        if (currentPhLevel > optimalMaxLevel)
-        {
-            Renderer rend = GetComponent<Renderer>();
-            rend.sharedMaterial = materials[2];
-            gameObject.tag = "DamagedLand";
-            setPhState(false);
-            endSim1 = true;
-        }
-        else if (currentPhLevel >= optimalMinimunLevel && currentPhLevel <= optimalMaxLevel)
-        {
-            gameObject.tag = "SafePH";
-            Renderer rend = GetComponent<Renderer>();
-            rend.sharedMaterial = materials[1];
-            setPhState(true);
-            endSim1 = true;
-        }
+	if(activeObject){  
+		if (currentPhLevel > optimalMaxLevel)
+			{
+			Renderer rend = GetComponent<Renderer>();
+					rend.sharedMaterial = materials[2];
+					gameObject.tag = "DamagedLand";
+					setPhState(false);
+					activeObject = false;
+				}
+			else if (currentPhLevel >= optimalMinimunLevel && currentPhLevel <= optimalMaxLevel)
+			{
+				gameObject.tag = "SafePH";
+				Renderer rend = GetComponent<Renderer>();
+				rend.sharedMaterial = materials[1];
+				setPhState(true);
+				activeObject = false;
+			}
+		}
+
     }
 
 	private void setPhState(bool state)
