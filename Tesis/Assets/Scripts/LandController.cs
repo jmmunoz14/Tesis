@@ -95,6 +95,35 @@ public class LandController : MonoBehaviour
 				}
 			}
 		}
+		else {
+			if (phRunning)
+			{
+				if(checkPhSafe())
+				{
+					phRunning = false;
+					EndPhPhase();
+				}
+			}
+
+			if (nutrientsRunning)
+			{
+				if(checkNutrientsSafe())
+				{
+					nutrientsRunning = false;
+					EndNutrientsPhase();
+				}
+			}
+
+			if(farmRunning)
+			{
+				if(checkFarmSafe())
+				{
+					farmRunning = false;
+					EndFarmPhase();
+				}
+
+			}
+		}
     }
 
 
@@ -145,7 +174,7 @@ public class LandController : MonoBehaviour
 	public void initializeFarmLands(bool isNormalMode)
     {
 		isNormalMode = isNormalMode;
-        foreach (var land in lands)
+		foreach (var land in landsToNutrient)
         {
             if (land.tag == "SafeNutrients")
             {
@@ -168,35 +197,43 @@ public class LandController : MonoBehaviour
         foreach (var land in lands)
         {
             Destroy(land.GetComponent<PhLandController>());
-            foreach (Transform child in land.transform)
-            {
-                if(child.tag != "Limit")
-                {
-                    Destroy(child.gameObject);
-                }
-            }
-
         }
         if (checkPhSafe())
         {
             gameController.player.transform.position = new Vector3(gameController.pPosition.transform.position.x, gameController.pPosition.transform.position.y, gameController.pPosition.transform.position.z);
+			gameController.firstTime = true;
             gameController.SetNextPhase();
-            gameController.firstTime = true;
+            
         } else
         {
             gameController.EndGame();
         }
     }
+
     public bool checkPhSafe()
     {
-        foreach (var land in lands)
-        {
-            if (land.tag == "SafePH")
-            {
-                return true;
-            }
-        }
-        return false;
+		if(!isNormalMode)
+		{  foreach (var land in lands)
+			{
+				if (land.tag == "SafePH")
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+		else
+		{
+			foreach (var land in lands)
+			{
+				if (land.tag != "SafePH" && land.tag != "DamagedLand")
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+      
     }
 
   
@@ -205,20 +242,11 @@ public class LandController : MonoBehaviour
         foreach (var land in landsToNutrient)
         {
             Destroy(land.GetComponent<NutrientLandController>());
-            foreach (Transform child in land.transform)
-            {
-                if (child.tag != "Limit")
-                {
-                    Destroy(child.gameObject);
-                }
-            }
-
         }
         if (checkNutrientsSafe())
         {
             gameController.player.transform.position = new Vector3(gameController.pPosition.transform.position.x, gameController.pPosition.transform.position.y, gameController.pPosition.transform.position.z);
             gameController.SetNextPhase();
-
             gameController.firstTime = true;
         }
         else
@@ -229,7 +257,9 @@ public class LandController : MonoBehaviour
 
     public bool checkNutrientsSafe()
     {
-        foreach (var land in lands)
+		if(!isNormalMode)
+		{
+			foreach (var land in landsToNutrient)
         {
             if (land.tag == "SafeNutrients")
             {
@@ -237,13 +267,25 @@ public class LandController : MonoBehaviour
             }
         }
         return false;
+		}
+		else
+		{
+			foreach (var land in landsToNutrient)
+			{
+				if (land.tag != "SafeNutrients" && land.tag != "DamagedLand")
+				{
+					return false;
+				}
+			}
+			return true;
+		}
     }
 		
     public void EndFarmPhase()
     {
         foreach (var land in landsToFarm)
         {
-            if(land.gameObject.tag!="SafeLand")
+            if(land.gameObject.tag != "SafeLand")
             {
                 land.gameObject.tag = "DamagedLand";
             }
@@ -252,9 +294,22 @@ public class LandController : MonoBehaviour
         gameController.SetNextPhase();
     }
 
+	public bool checkFarmSafe()
+	{
+		foreach (var land in landsToFarm)
+		{
+			if (land.tag != "SafeLand" && land.tag != "DamagedLand")
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
     int RandomNumber(int min, int max)
     {
         System.Random random = new System.Random();
         return random.Next(min, max);
     }
+		
 }
