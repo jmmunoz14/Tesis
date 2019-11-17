@@ -185,6 +185,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
+--- !u!114 &440562242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 884830098134409325, guid: e9d6edb847bcd34459775e178bf0ad72,
+    type: 3}
+  m_PrefabInstance: {fileID: 1836753156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b45ebbf86be4df6b0e6cd933812af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &467635367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleRenderers:
-  - {fileID: 0}
+  - {fileID: 440562242}
   autoupdate: 1
   blurRadius: 0.02
   thicknessCutoff: 1.2
@@ -963,7 +975,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantOption: 2
-  plantedPlant: {fileID: 1836753166}
+  plantedPlant: {fileID: 1000011516977654, guid: 1cee73a22ae3bff49a094a5883eabd3c,
+    type: 3}
   materials:
   - {fileID: 2100000, guid: 265c1888e0bb7ae4893432e053373ca5, type: 2}
   - {fileID: 2100000, guid: 9b01d7c0e4dfa854eb5dfe2624e27c0f, type: 2}
@@ -1049,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleRenderers:
-  - {fileID: 0}
+  - {fileID: 440562242}
   autoupdate: 1
   blurRadius: 0.02
   thicknessCutoff: 1.2
