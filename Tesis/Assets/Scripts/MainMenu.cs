@@ -8,14 +8,19 @@ public class MainMenu : MonoBehaviour
 
 	public GameObject menu;
 	public GameObject credits;
+	private int isNormalMode = 1;
 
 	public void PlayNormalMode()
 	{
+		isNormalMode = 1;
+		saveData(isNormalMode);
 		SceneManager.LoadScene("LandScene");
 	}
 
 	public void PlaySurvivalMode()
 	{
+		isNormalMode = 0;
+		saveData(isNormalMode);
 		SceneManager.LoadScene("LandScene");
 	}
 
@@ -40,4 +45,10 @@ public class MainMenu : MonoBehaviour
 	{
 		Application.Quit();
 	}
+
+	void saveData(int normalMode)
+	{
+		PlayerPrefs.SetInt("isNormalMode", normalMode);
+	}
+		
 }

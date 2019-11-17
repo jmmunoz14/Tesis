@@ -33,69 +33,74 @@ public class LandController : MonoBehaviour
 
     public List<int> num = new List<int>();
 
+	private bool isNormalMode= true;
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (phRunning)
-        {
-            phTimer -= Time.deltaTime;
-            izquierdo.text = phTimer + " S";
-            derecho.text = phTimer + " S";
-            if (phTimer <= 0.0f)
-            {
-                izquierdo.transform.gameObject.SetActive(false);
-                derecho.transform.gameObject.SetActive(false);
-                phRunning = false;
-                EndPhPhase();
-            }
+		if(!isNormalMode)
+		{
+			if (phRunning)
+			{
+				phTimer -= Time.deltaTime;
+				izquierdo.text = phTimer + " S";
+				derecho.text = phTimer + " S";
+				if (phTimer <= 0.0f)
+				{
+					izquierdo.transform.gameObject.SetActive(false);
+					derecho.transform.gameObject.SetActive(false);
+					phRunning = false;
+					EndPhPhase();
+				}
 
-        }
-        
-        if (nutrientsRunning)
-        {
-            izquierdo.transform.gameObject.SetActive(true);
-            derecho.transform.gameObject.SetActive(true);
-            nutrientsTimer -= Time.deltaTime;
-            izquierdo.text = nutrientsTimer + " S";
-            derecho.text = nutrientsTimer + " S";
-            if (nutrientsTimer <= 0.0f)
-            {
-                izquierdo.transform.gameObject.SetActive(false);
-                derecho.transform.gameObject.SetActive(false);
-                nutrientsRunning = false;
-                EndNutrientsPhase();
-            }
-            nutrientsTimeToShow -= Time.deltaTime;
-            if (nutrientsTimeToShow < 0.0f)
-            {
-				int r = Random.Range (0, num.Count);
-                landsToNutrient[num[r]].GetComponent<NutrientLandController>().EnableText();
-				num.RemoveAt(r);
-                nutrientsTimeToShow = 2f;
-            }
-        }
+			}
 
-        if(farmRunning)
-        {
-            izquierdo.transform.gameObject.SetActive(true);
-            derecho.transform.gameObject.SetActive(true);
-            farmTimer -= Time.deltaTime;
-            izquierdo.text = farmTimer + " S";
-            derecho.text = farmTimer + " S";
-            if (farmTimer <= 0.0f)
-            {
-                izquierdo.transform.gameObject.SetActive(false);
-                derecho.transform.gameObject.SetActive(false);
-                farmRunning = false;
-                EndFarmPhase();
-            }
-        }
+			if (nutrientsRunning)
+			{
+				izquierdo.transform.gameObject.SetActive(true);
+				derecho.transform.gameObject.SetActive(true);
+				nutrientsTimer -= Time.deltaTime;
+				izquierdo.text = nutrientsTimer + " S";
+				derecho.text = nutrientsTimer + " S";
+				if (nutrientsTimer <= 0.0f)
+				{
+					izquierdo.transform.gameObject.SetActive(false);
+					derecho.transform.gameObject.SetActive(false);
+					nutrientsRunning = false;
+					EndNutrientsPhase();
+				}
+				nutrientsTimeToShow -= Time.deltaTime;
+				if (nutrientsTimeToShow < 0.0f)
+				{
+					int r = Random.Range (0, num.Count);
+					landsToNutrient[num[r]].GetComponent<NutrientLandController>().EnableText();
+					num.RemoveAt(r);
+					nutrientsTimeToShow = 2f;
+				}
+			}
 
+			if(farmRunning)
+			{
+				izquierdo.transform.gameObject.SetActive(true);
+				derecho.transform.gameObject.SetActive(true);
+				farmTimer -= Time.deltaTime;
+				izquierdo.text = farmTimer + " S";
+				derecho.text = farmTimer + " S";
+				if (farmTimer <= 0.0f)
+				{
+					izquierdo.transform.gameObject.SetActive(false);
+					derecho.transform.gameObject.SetActive(false);
+					farmRunning = false;
+					EndFarmPhase();
+				}
+			}
+		}
     }
 
 
-    public void initializePhLands()
+    public void initializePhLands(bool isNormalMode)
 	{
+		isNormalMode = isNormalMode;
 		foreach(var land in lands){
 			PhLandController phlc = land.AddComponent<PhLandController>() as PhLandController;
 			phlc.materials = materials;
@@ -115,8 +120,9 @@ public class LandController : MonoBehaviour
         derecho.transform.gameObject.SetActive(true);
     }
 
-    public void initializeNutrientsLands()
+	public void initializeNutrientsLands(bool isNormalMode)
     {
+		isNormalMode = isNormalMode;
 		int nutrientsCounter = 0;
         foreach (var land in lands)
         {
@@ -136,8 +142,9 @@ public class LandController : MonoBehaviour
         
     }
 
-    public void initializeFarmLands()
+	public void initializeFarmLands(bool isNormalMode)
     {
+		isNormalMode = isNormalMode;
         foreach (var land in lands)
         {
             if (land.tag == "SafeNutrients")
