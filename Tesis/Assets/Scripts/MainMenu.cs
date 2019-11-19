@@ -6,14 +6,18 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-	public GameObject menu;
-	public GameObject credits;
+	public GameObject menuLeft;
+	public GameObject creditsLeft;
+	public GameObject menuRight;
+	public GameObject creditsRight;
+	public GameObject player;
 	private int isNormalMode = 1;
 
 	public void PlayNormalMode()
 	{
 		isNormalMode = 1;
 		saveData(isNormalMode);
+		Destroy(player);
 		SceneManager.LoadScene("LandScene");
 	}
 
@@ -21,24 +25,30 @@ public class MainMenu : MonoBehaviour
 	{
 		isNormalMode = 0;
 		saveData(isNormalMode);
+		Destroy(player);
 		SceneManager.LoadScene("LandScene");
 	}
 
 	public void PlayTutorial()
 	{
+		Destroy(player);
 		SceneManager.LoadScene("Tutorial");
 	}
 
 	public void OpenCredits()
 	{
-		menu.SetActive(false);
-		credits.SetActive(true);
+		menuLeft.SetActive(false);
+		menuRight.SetActive(false);
+		creditsLeft.SetActive(true);
+		creditsRight.SetActive(true);
 	}
 
 	public void CloseCredits()
 	{
-		credits.SetActive(false);
-		menu.SetActive(true);
+		menuLeft.SetActive(true);
+		menuRight.SetActive(true);
+		creditsLeft.SetActive(false);
+		creditsRight.SetActive(false);
 	}
 
 	public void ExitGame()
