@@ -7,6 +7,7 @@ using Valve.VR.Extras;
 public class MenuVRHandler : MonoBehaviour
 {
 	public SteamVR_LaserPointer laserPointer;
+    public GameObject playerM;
 	public Button normalMode;
 	public Button survivalMode;
 	public Button tutorialMode;
@@ -24,15 +25,16 @@ public class MenuVRHandler : MonoBehaviour
 		switch(e.target.name)
 		{
 		case "NormalButton":
-			normalMode.onClick.Invoke();
+                normalMode.onClick.Invoke();
 			break;
 
 		case "SurvivalButton":
-			survivalMode.onClick.Invoke();
+                survivalMode.onClick.Invoke();
 			break;
 
 		case "Tutorial":
-			tutorialMode.onClick.Invoke();
+                Destroy(playerM);
+                tutorialMode.onClick.Invoke();
 			break;
 
 		case "ExitGame":

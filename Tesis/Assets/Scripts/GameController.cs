@@ -81,7 +81,7 @@ public class GameController : MonoBehaviour
             timeLeftText.text = "Tu tiempo fue de " + normalTimer + " SEGUNDOS.";
             timeRightText.text = "Tu tiempo fue de " + normalTimer + " SEGUNDOS.";
         }
-          
+        Debug.Log("END");
         endGameCanvasLeft.gameObject.SetActive(true);
         endGameCanvasRight.gameObject.SetActive(true);
     }

@@ -52,7 +52,7 @@ public class SceneHandler : MonoBehaviour
             if (numberOfTutorial == 1)
             {
                 text.text = "El dia de hoy tomará el papel de un campesino que debe recuperar y reparar su suelo, lo cual no es una tarea facil. \n" +
-                            "El objetivo es entender el proceso que se lleva a cabo, la dificultad de este proceso y como, en muchos casos, el suelo es irreparable.";
+                            "El objetivo es entender el proceso que se lleva a cabo, la dificultad de este, y como en muchos casos, el suelo es irreparable.";
             }
             if (numberOfTutorial == 2)
             {
@@ -92,7 +92,7 @@ public class SceneHandler : MonoBehaviour
         if(numberOfTutorial == 9)
         {
             textPractice.text = "Comenzará con la primera fase. Para ello, tome el frasco transparente y vierta el líquido sobre la tierra " +
-                                "hasta que su PH se encuentre entre 35 y 55. Cuando lo logre, apunte y presione el gatillo en esta dirección para continuar.";
+                                "hasta que su PH se encuentre entre 7 y 8. Cuando lo logre, apunte y presione el gatillo en esta dirección para continuar.";
 			tutorialC.startSimulationPH();
         }
 

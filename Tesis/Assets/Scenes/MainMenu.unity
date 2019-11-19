@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 154991475}
   - component: {fileID: 154991474}
   m_Layer: 5
-  m_Name: Survival Mode
+  m_Name: SurvivalButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -577,11 +577,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d2f0f4e54d1af49a739f3b2a9e44b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuLeft: {fileID: 0}
-  creditsLeft: {fileID: 0}
-  menuRight: {fileID: 0}
-  creditsRight: {fileID: 0}
-  player: {fileID: 0}
+  menuLeft: {fileID: 716961637}
+  creditsLeft: {fileID: 391674392}
+  menuRight: {fileID: 2122677750}
+  creditsRight: {fileID: 1056049490}
+  player: {fileID: 1721526612}
 --- !u!4 &254501933
 Transform:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -91.899994}
+  m_AnchoredPosition: {x: 0, y: -91.900024}
   m_SizeDelta: {x: 432.5, y: 123.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495723885
@@ -1085,7 +1085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -91.899994}
+  m_AnchoredPosition: {x: 0, y: -91.900024}
   m_SizeDelta: {x: 432.5, y: 123.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499807218
@@ -5024,6 +5024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserPointer: {fileID: 1721526614}
+  playerM: {fileID: 1721526612}
   normalMode: {fileID: 899998987}
   survivalMode: {fileID: 1796909355}
   tutorialMode: {fileID: 2138194740}
@@ -5341,7 +5342,7 @@ GameObject:
   - component: {fileID: 1796909355}
   - component: {fileID: 1796909358}
   m_Layer: 5
-  m_Name: Survival Mode
+  m_Name: SurvivalButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
